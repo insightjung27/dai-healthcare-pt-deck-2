@@ -85,19 +85,23 @@
 
   /* ===== S2 capability map ===== */
   .cap-map{ width:100%; }
-  .cap-head, .cap-row{ display:grid; grid-template-columns:2.5fr 3fr 3fr 1.7fr; gap:26px; align-items:center; }
+  .cap-head, .cap-row{ display:grid; grid-template-columns:2.3fr 2.7fr 0.5fr 2.7fr 1.7fr; gap:18px; align-items:center; }
   .cap-head{ padding:0 6px 13px; border-bottom:2.5px solid var(--ink); }
   .cap-head .ch{ font-size:16px; font-weight:800; letter-spacing:.03em; color:var(--muted); }
-  .cap-row{ padding:22px 6px; border-bottom:1px solid var(--hair); min-width:0; }
-  .cap-row .dom{ font-size:25px; font-weight:800; color:var(--ink); min-width:0; }
-  .cap-row .dom span{ display:block; font-size:16px; font-weight:600; color:var(--muted); margin-top:5px; letter-spacing:.01em; }
-  .cap-row .cell{ font-size:20px; line-height:1.45; color:var(--ink2); min-width:0; font-weight:500; }
-  .cap-row .cell .k{ display:block; font-size:15.5px; font-weight:800; letter-spacing:.04em; color:var(--accent-deep); margin-bottom:5px; }
-  .cap-row .proof{ justify-self:start; font-size:18px; font-weight:800; letter-spacing:.01em;
-    color:var(--accent-deep); background:#e7f4f9; border:1.5px solid #c3e2ee; border-radius:999px; padding:9px 20px; white-space:nowrap; }
-  .content-caption{ margin-top:32px; padding-top:22px; border-top:1px solid var(--hair);
-    font-size:24px; color:var(--ink); letter-spacing:-.01em; }
-  .content-caption b{ color:var(--ink); font-weight:800; }
+  .cap-row{ padding:20px 6px; border-bottom:1px solid var(--hair); min-width:0; }
+  .cap-row .dom{ font-size:24px; font-weight:800; color:var(--ink); min-width:0; }
+  .cap-row .dom span{ display:block; font-size:15.5px; font-weight:600; color:var(--muted); margin-top:5px; letter-spacing:.01em; }
+  .cap-row .cell{ font-size:19.5px; line-height:1.4; color:var(--ink2); min-width:0; font-weight:500; }
+  .cap-row .cell .k{ display:block; font-size:14.5px; font-weight:800; letter-spacing:.04em; color:var(--accent-deep); margin-bottom:5px; }
+  .cap-row .uo-arrow{ text-align:center; color:var(--accent); font-size:24px; font-weight:800; line-height:1; }
+  .cap-row .proof{ justify-self:start; font-size:19px; font-weight:800; letter-spacing:.01em;
+    color:#fff; background:var(--accent-deep); border:none; border-radius:999px; padding:10px 22px; white-space:nowrap;
+    box-shadow:0 4px 12px rgba(12,109,140,.22); }
+  .content-caption{ margin-top:28px; padding:20px 28px; background:var(--navy); border-radius:10px;
+    font-size:25px; color:#fff; letter-spacing:-.012em; display:flex; align-items:center; gap:16px; }
+  .content-caption .lead{ flex:0 0 auto; font-size:15px; font-weight:800; letter-spacing:.08em; color:#5fd0ee; }
+  .content-caption b{ color:#fff; font-weight:800; }
+  .content-caption .em{ color:#5fd0ee; font-weight:800; }
 
   /* ===== S3/S4 case split ===== */
   .case-split{ display:grid; grid-template-columns:1fr 1.32fr; gap:52px; align-items:center; }
@@ -225,7 +229,15 @@
   .apply-line .k{ display:inline-block; font-size:15px; font-weight:800; letter-spacing:.06em; color:#5fd0ee; margin-right:16px; }
 
   /* ===== S7 AI split ===== */
-  .ai-split{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1.5px solid var(--hair); border-radius:8px; overflow:hidden; }
+  .ai-split{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1.5px solid var(--hair); border-radius:8px; overflow:hidden; position:relative; }
+  .ai-mid{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:3;
+    width:54px; height:54px; border-radius:50%; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:800;
+    box-shadow:0 6px 18px rgba(19,145,184,.35); border:3px solid var(--ivory); }
+  .ai-col.next li{ display:flex; align-items:baseline; gap:13px; padding:14px 0; }
+  .ai-col.next li::before{ display:none; }
+  .ai-col.next li .chip{ flex:0 0 auto; font-weight:800; color:#fff; background:var(--accent-deep);
+    border-radius:7px; padding:6px 14px; font-size:16.5px; letter-spacing:.01em; }
   .ai-col{ padding:30px 36px; }
   .ai-col.now{ background:var(--paper); }
   .ai-col.next{ background:var(--wash); border-left:1.5px solid var(--hair); }
@@ -267,26 +279,30 @@
   .stage-bottom b{ color:var(--accent-deep); font-weight:800; }
 
   /* ===== S9 execution hypotheses (신설) ===== */
-  .hyp-lead{ font-size:18px; font-weight:600; color:var(--muted); margin-bottom:22px; letter-spacing:-.005em; }
-  .hyp-lead b{ color:var(--accent-deep); font-weight:800; }
-  .hyps{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+  .hyp-flow{ display:flex; align-items:center; gap:12px; background:var(--navy); color:#fff;
+    border-radius:10px; padding:12px 24px; margin-bottom:16px; font-size:18.5px; font-weight:700; letter-spacing:-.01em; }
+  .hyp-flow .st{ display:inline-flex; width:30px; height:30px; border-radius:50%; background:#5fd0ee; color:var(--navy);
+    align-items:center; justify-content:center; font-weight:800; font-size:16px; flex:0 0 auto; }
+  .hyp-flow .arw{ color:#5fd0ee; font-weight:800; font-size:24px; margin:0 6px; flex:0 0 auto; }
+  .hyps{ display:grid; grid-template-columns:1fr 54px 1fr; gap:0; align-items:stretch; }
+  .hyp-mid{ display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:38px; font-weight:800; }
   .hyp{ border:1.5px solid var(--hair); border-radius:10px; background:var(--paper); overflow:hidden;
     display:flex; flex-direction:column; }
-  .hyp .hh{ background:var(--navy); color:#fff; padding:20px 26px; }
-  .hyp .hh .tag{ font-size:15px; font-weight:800; letter-spacing:.05em; color:#5fd0ee; }
-  .hyp .hh .ht{ margin-top:8px; font-size:23px; font-weight:800; line-height:1.32; letter-spacing:-.01em; }
-  .hyp .hb{ padding:20px 26px 12px; display:flex; flex-direction:column; justify-content:space-between; gap:0; flex:1 1 auto; }
-  .hyp .hrow{ display:grid; grid-template-columns:92px 1fr; gap:16px; padding:13px 0; align-items:baseline; }
+  .hyp .hh{ background:var(--navy); color:#fff; padding:15px 24px; }
+  .hyp .hh .tag{ font-size:14.5px; font-weight:800; letter-spacing:.05em; color:#5fd0ee; }
+  .hyp .hh .ht{ margin-top:7px; font-size:21px; font-weight:800; line-height:1.3; letter-spacing:-.01em; }
+  .hyp .hb{ padding:12px 24px 6px; display:flex; flex-direction:column; justify-content:space-between; gap:0; flex:1 1 auto; }
+  .hyp .hrow{ display:grid; grid-template-columns:86px 1fr; gap:14px; padding:10px 0; align-items:baseline; }
   .hyp .hrow + .hrow{ border-top:1px solid var(--hair2); }
-  .hyp .hrow .rk{ font-size:15px; font-weight:800; letter-spacing:.02em; color:var(--accent-deep); }
-  .hyp .hrow .rv{ font-size:18.5px; line-height:1.42; color:var(--ink2); font-weight:500; }
+  .hyp .hrow .rk{ font-size:14.5px; font-weight:800; letter-spacing:.02em; color:var(--accent-deep); }
+  .hyp .hrow .rv{ font-size:17.5px; line-height:1.4; color:var(--ink2); font-weight:500; }
   .hyp .hrow .rv b{ color:var(--ink); font-weight:800; }
-  .hyp .gate{ background:#e7f4f9; padding:16px 26px; display:grid; grid-template-columns:92px 1fr; gap:16px; align-items:baseline; }
-  .hyp .gate .rk{ font-size:15px; font-weight:800; letter-spacing:.02em; color:var(--accent-deep); }
-  .hyp .gate .rv{ font-size:18px; line-height:1.42; color:var(--ink); font-weight:700; }
+  .hyp .gate{ background:#e7f4f9; padding:13px 24px; display:grid; grid-template-columns:86px 1fr; gap:14px; align-items:baseline; }
+  .hyp .gate .rk{ font-size:14.5px; font-weight:800; letter-spacing:.02em; color:var(--accent-deep); }
+  .hyp .gate .rv{ font-size:17.5px; line-height:1.4; color:var(--ink); font-weight:700; }
   .hyp .gate .rv b{ color:var(--accent-deep); }
-  .hyp-safe{ margin-top:24px; border-left:5px solid var(--faint); background:var(--wash); border-radius:6px;
-    padding:18px 26px; font-size:18px; line-height:1.5; color:var(--ink2); font-weight:500; }
+  .hyp-safe{ margin-top:16px; border-left:5px solid var(--faint); background:var(--wash); border-radius:6px;
+    padding:13px 24px; font-size:16px; line-height:1.45; color:var(--ink2); font-weight:500; }
   .hyp-safe b{ color:var(--ink); font-weight:800; }
 
   /* ===== closing ===== */
@@ -297,8 +313,9 @@
   .evid{ display:flex; gap:0; margin-bottom:50px; }
   .evid .e{ flex:1; padding-right:44px; }
   .evid .e + .e{ padding-left:44px; border-left:1px solid rgba(255,255,255,.15); }
-  .evid .e .ei{ font-size:17px; font-weight:800; letter-spacing:.03em; color:#5fd0ee; }
-  .evid .e .ed{ margin-top:16px; font-size:25px; font-weight:700; color:#e9edf7; line-height:1.42; letter-spacing:-.01em; }
+  .evid .e .en{ font-size:20px; font-weight:800; letter-spacing:.14em; color:rgba(95,208,238,.5); }
+  .evid .e .ek{ margin-top:6px; font-size:40px; font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1; }
+  .evid .e .ed{ margin-top:16px; font-size:19px; font-weight:500; color:#98a2c4; line-height:1.45; letter-spacing:-.005em; }
   .close-line{ font-size:33px; font-weight:700; line-height:1.4; color:#ccd3e7; letter-spacing:-.012em; max-width:1340px; }
   .close-line .em{ color:#fff; font-weight:800; }
 
@@ -348,35 +365,40 @@
       <div class="cap-head">
         <div class="ch">경험 · 도메인</div>
         <div class="ch">사용자가 완료할 일</div>
+        <div class="ch"></div>
         <div class="ch">현장의 처리 업무</div>
         <div class="ch">무엇을 증명하나</div>
       </div>
       <div class="cap-row">
         <div class="dom">굿리치<span>보험 · 인슈어테크</span></div>
         <div class="cell"><span class="k">USER</span>보험분석을 위한 상담신청</div>
+        <div class="uo-arrow">→</div>
         <div class="cell"><span class="k">OPS</span>상담 활용 정보의 품질 확인</div>
         <div class="proof">전환</div>
       </div>
       <div class="cap-row">
         <div class="dom">THK<span>장기요양 · 돌봄</span></div>
         <div class="cell"><span class="k">USER</span>수급자 자격·구매 정보 조회</div>
+        <div class="uo-arrow">→</div>
         <div class="cell"><span class="k">OPS</span>주문·직배송의 확인과 예외 처리</div>
         <div class="proof">운영</div>
       </div>
       <div class="cap-row">
         <div class="dom">더베스트페이<span>병원 원무</span></div>
         <div class="cell"><span class="k">USER</span>예약·조회·수납</div>
+        <div class="uo-arrow">→</div>
         <div class="cell"><span class="k">OPS</span>EMR 연동과 기관별 요구 조율</div>
         <div class="proof">연동</div>
       </div>
       <div class="cap-row">
         <div class="dom">코나아이<span>지역화폐 · 결제</span></div>
         <div class="cell"><span class="k">USER</span>지역화폐·카드 이용</div>
+        <div class="uo-arrow">→</div>
         <div class="cell"><span class="k">OPS</span>3개 팀 요청의 우선순위·실행 관리</div>
         <div class="proof">조직 실행</div>
       </div>
     </div>
-    <div class="content-caption"><b>제품의 세부 내용을 이해하면서, 여러 조직의 실행을 함께 챙길 수 있습니다.</b></div>
+    <div class="content-caption"><span class="lead">수렴점</span><span>네 현장 모두 — <b>사용자가 할 일</b>과 <b>현장의 처리 업무</b>를 함께 설계한 <span class="em">하나의 일관된 플랫폼 역량</span></span></div>
   </div>
   <footer class="slide-footer">
     <div class="source">사용자가 무엇을 완료해야 하는지와, 운영자가 어떻게 처리해야 하는지를 함께 설계해 왔습니다.</div><div class="page-number">02 / 10</div>
@@ -588,7 +610,7 @@
   <div class="slide-content">
     <div class="ai-split">
       <div class="ai-col now">
-        <div class="tense">지금까지 · 수행 경험</div>
+        <div class="tense">지금까지 · 수행 · 만든다</div>
         <h3>AI로 앞단을 구체화</h3>
         <ul>
           <li>PRD · 기능정의 · <b>프로토타입 제작</b></li>
@@ -596,14 +618,15 @@
           <li>사내 운영 업무의 <b>도구화 · 자동화</b></li>
         </ul>
       </div>
+      <div class="ai-mid">→</div>
       <div class="ai-col next">
-        <div class="tense">DAI · 서비스 적용 기준</div>
-        <h3>정식 적용은 이렇게 판단</h3>
+        <div class="tense">DAI · 적용 · 판단한다</div>
+        <h3>정식 적용은 4가지 기준으로</h3>
         <ul>
-          <li>어떤 <b>사용자·운영 문제</b>를 개선하는가</li>
-          <li>결과의 <b>오류·누락</b>을 어떻게 확인하는가</li>
-          <li>어떤 상황에서 <b>사람이 검토</b>하는가</li>
-          <li><b>데이터·연동·보안·운영 비용</b>을 감당할 수 있는가</li>
+          <li><span class="chip">효과</span>어떤 사용자·운영 문제를 개선하는가</li>
+          <li><span class="chip">오류·누락</span>결과의 오류·누락을 어떻게 확인하는가</li>
+          <li><span class="chip">사람 검토</span>어떤 상황에서 사람이 검토하는가</li>
+          <li><span class="chip">비용</span>데이터·연동·보안·운영 비용을 감당할 수 있는가</li>
         </ul>
       </div>
     </div>
@@ -672,37 +695,38 @@
     <h1>먼저 증명할 <span class="em">두 가지 실행 가설</span></h1>
   </header>
   <div class="slide-content">
-    <div class="hyp-lead">공개된 그룹 자산과 제 경험에서 좁힌 <b>가설</b>입니다. 확정 계획이 아니라, 입사 후 함께 검증할 출발점으로 제안합니다.</div>
+    <div class="hyp-flow"><span class="st">①</span>접점을 하나의 여정으로 잇고<span class="arw">→</span><span class="st">②</span>그 데이터를 표준화해 개선에 재사용한다</div>
     <div class="hyps">
       <div class="hyp">
         <div class="hh">
-          <div class="tag">가설 A · 환자 경험 연결</div>
-          <div class="ht">흩어진 모니터링·관리 접점을<br>하나의 환자 흐름으로 잇는다</div>
+          <div class="tag">① 가설 A · 환자 경험 연결(접착제)</div>
+          <div class="ht">진단·모니터링·관리를<br>하나의 환자 여정으로 잇는다</div>
         </div>
         <div class="hb">
-          <div class="hrow"><div class="rk">가설</div><div class="rv">측정·관리 데이터가 <b>한 흐름으로 이어지면</b> 측정 지속·다음 행동 연결이 좋아진다</div></div>
-          <div class="hrow"><div class="rk">근거</div><div class="rv">그룹은 모니터링·관리 접점(하이카디·케어센스에어 등)을 이미 확보 — <b>‘잇는 경험’</b>은 아직 빈자리</div></div>
-          <div class="hrow"><div class="rk">검증</div><div class="rv">소수 사용자 대상 <b>얇은 연결 슬라이스</b> 프로토타입으로 실사용·이탈 관측</div></div>
+          <div class="hrow"><div class="rk">가설</div><div class="rv">지금은 접점이 따로 쓰인다 — 만성질환 사용자에게 <b>측정 → 해석 → 다음 행동</b>이 한 여정으로 이어지면 측정 지속·후속 연결이 좋아진다</div></div>
+          <div class="hrow"><div class="rk">근거</div><div class="rv">그룹은 진단·모니터링·관리 접점(닥터눈·하이카디·케어센스에어 등)을 이미 확보 — 잇는 <b>‘환자 경험 레이어’가 빈자리</b></div></div>
+          <div class="hrow"><div class="rk">검증</div><div class="rv">만성질환군 소수 대상, 두 접점을 잇는 <b>얇은 슬라이스</b>로 측정 지속·다음 행동 연결 관측</div></div>
         </div>
-        <div class="gate"><div class="rk">성공·중단</div><div class="rv"><b>실사용(채택) + 안전 인시던트 0 + 동의·규제 확인 통과</b> → 확장 / 미달 → 축소·보류</div></div>
+        <div class="gate"><div class="rk">성공·중단</div><div class="rv"><b>측정 지속·행동 연결↑ + 안전 인시던트 0 + 동의·규제 통과</b> → 확장 / 미달 → 축소·보류</div></div>
       </div>
+      <div class="hyp-mid">→</div>
       <div class="hyp">
         <div class="hh">
-          <div class="tag">가설 B · 접근성 (원무 경험 이식)</div>
-          <div class="ht">예약~동의~결과 확인의<br>마찰을 줄여 등록·재사용을 높인다</div>
+          <div class="tag">② 가설 B · 데이터 플라이휠(RWD) ↻</div>
+          <div class="ht">여정에서 쌓인 데이터를<br>표준화해 개선에 재사용한다</div>
         </div>
         <div class="hb">
-          <div class="hrow"><div class="rk">가설</div><div class="rv">등록·동의·조회의 <b>마찰을 줄이면</b> 디지털 헬스 접점의 등록·재사용률이 오른다</div></div>
-          <div class="hrow"><div class="rk">근거</div><div class="rv">EMR 연동 원무를 <b>서비스화한 제 경험</b>이 그대로 붙는 지점</div></div>
-          <div class="hrow"><div class="rk">검증</div><div class="rv">한 개 접점에서 <b>등록·동의·조회 플로우 개선안</b>을 실증</div></div>
+          <div class="hrow"><div class="rk">가설</div><div class="rv">접점을 잇는 과정의 이용·측정 데이터를 <b>표준 형식으로 축적</b>하면, 다음 서비스 개선·근거의 토대로 재사용되어 개선이 빨라진다</div></div>
+          <div class="hrow"><div class="rk">근거</div><div class="rv">접점이 따로 돌면 데이터도 흩어진다 — <b>상호운용 표준 기반 ‘데이터 레이어’</b>가 재사용의 전제</div></div>
+          <div class="hrow"><div class="rk">검증</div><div class="rv">한 여정에서 <b>최소 공통 데이터 표준</b>(동의·항목·포맷)을 정의하고, 수집 → 재사용 파이프라인을 소규모 실증</div></div>
         </div>
-        <div class="gate"><div class="rk">성공·중단</div><div class="rv"><b>등록 완료율·재사용 관측</b> → 공통화 가치가 확인되면 확대</div></div>
+        <div class="gate"><div class="rk">성공·중단</div><div class="rv"><b>데이터 완결성·재사용 가능성 확인 + 동의·보안·규제 통과</b> → 확대 / 미달 → 표준 범위 재조정</div></div>
       </div>
     </div>
-    <div class="hyp-safe">가설은 <b>입사 후 초기 진단</b>으로 갱신됩니다. 데이터 활용은 <b>환자 동의·규제 범위 확인이 전제</b>이며, 임상·규제 판단은 전문가와 함께합니다. 제품·조직·데이터 통합은 내부 상황을 파악한 뒤 확정하겠습니다.</div>
+    <div class="hyp-safe">두 가설은 <b>“접점을 잇고 → 거기서 쌓인 데이터를 재사용”</b>으로 이어집니다. 확정이 아니라 <b>입사 후 초기 진단</b>으로 갱신하며, 데이터 활용은 <b>환자 동의·보안·규제 범위 확인이 전제</b>입니다. 특정 환자 데이터 사용 권한을 이미 확보했다고 가정하지 않고, 임상·규제 판단은 전문가와 함께합니다.</div>
   </div>
   <footer class="slide-footer">
-    <div class="source">공개 자산 기반의 검증 가설(확정 아님) · 특정 환자 데이터 사용 권한을 이미 확보했다고 가정하지 않음</div><div class="page-number">09 / 10</div>
+    <div class="source">공개 자산 기반의 검증 가설(확정 아님) · 데이터 활용은 동의·보안·규제 범위 확인 전제 · 사용 권한 확보 가정 안 함</div><div class="page-number">09 / 10</div>
   </footer>
 </section></div>
 
@@ -713,9 +737,9 @@
     <div class="eyebrow" style="margin-bottom:40px">Closing</div>
     <div class="close-title">DAI의 사업 과제를<br><span class="em">제품과 운영</span>으로 구체화하겠습니다</div>
     <div class="evid">
-      <div class="e"><div class="ei">01 · 전환</div><div class="ed">사용자 행동과 사업 전환을<br>함께 본 경험</div></div>
-      <div class="e"><div class="ei">02 · 연동</div><div class="ed">현장 업무와 외부 시스템을<br>연결한 경험</div></div>
-      <div class="e"><div class="ei">03 · 실행</div><div class="ed">우선순위를 정하고<br>여러 팀의 실행을 이끈 경험</div></div>
+      <div class="e"><div class="en">01</div><div class="ek">전환</div><div class="ed">사용자 행동과 사업 전환을 함께 본 경험</div></div>
+      <div class="e"><div class="en">02</div><div class="ek">연동</div><div class="ed">현장 업무와 외부 시스템을 연결한 경험</div></div>
+      <div class="e"><div class="en">03</div><div class="ek">실행</div><div class="ed">우선순위를 정하고 여러 팀의 실행을 이끈 경험</div></div>
     </div>
     <div class="close-line">필요한 전문성과 협업하며, <span class="em">판단의 근거와 실행 결과를 끝까지 설명</span>하는 팀장이 되겠습니다.</div>
   </div>
