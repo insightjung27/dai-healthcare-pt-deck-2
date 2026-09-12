@@ -204,20 +204,43 @@
   .cmp-hd .t{ font-size:18px; font-weight:800; color:var(--ink); letter-spacing:.01em; }
   .cmp-hd .s{ font-size:14.5px; font-weight:600; color:var(--muted); margin-top:5px; }
   .cmp-flow{ flex:1 1 auto; display:flex; flex-direction:column; min-height:0; }
-  /* 우측 흐름(3p) — before/after 한 덩어리 */
-  .flow-steps{ padding:20px 28px; gap:0; }
-  .cmp-stage{ flex:1 1 0; background:var(--wash); border:1px solid var(--hair); border-radius:10px;
-    padding:16px 22px; display:flex; flex-direction:column; justify-content:center; min-height:0; }
-  .cmp-slb{ font-size:14.5px; font-weight:800; letter-spacing:.05em; margin-bottom:14px; }
+  /* 좌측 레버 히어로(3p) — 제목과 중복되는 20% 대신 핵심 레버를 초점으로 */
+  .cmp-lever-lbl{ font-size:15px; font-weight:800; letter-spacing:.06em; color:var(--slate); margin-bottom:14px; }
+  .cmp-lever{ font-size:38px; font-weight:800; color:var(--ink); line-height:1.16; letter-spacing:-.022em; }
+  .cmp-lever em{ font-style:normal; color:var(--accent-deep); }
+  .cmp-chip{ display:inline-block; margin-top:20px; font-size:17px; font-weight:800; color:#fff;
+    background:var(--accent-deep); border-radius:999px; padding:9px 20px; letter-spacing:.01em; }
+  /* 우측 흐름(3p) — before/after 한 덩어리, '반복 확인 제거'를 시각으로 */
+  .flow-steps{ padding:22px 30px; gap:0; }
+  .cmp-stage{ flex:1 1 0; border-radius:12px; padding:18px 24px; display:flex; flex-direction:column;
+    justify-content:center; min-height:0; }
+  .cmp-stage.before{ background:var(--wash); border:1px solid var(--hair); }
+  .cmp-stage.after{ background:#eef6fa; border:1px solid #bfe0ec; }
+  .cmp-slb{ font-size:15px; font-weight:800; letter-spacing:.04em; margin-bottom:18px; }
   .cmp-slb.before{ color:var(--slate); }
   .cmp-slb.after{ color:var(--accent-deep); }
-  .cmp-trans{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; gap:9px;
-    padding:10px 0; font-size:15px; font-weight:800; color:var(--accent-deep); letter-spacing:.03em; }
-  .cmp-trans .ar{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px;
-    border-radius:50%; background:var(--accent); color:#fff; font-size:17px; font-weight:800; }
-  .cmp-flow .fnode{ font-size:15.5px; padding:12px 15px; }
-  /* 우측 막대(4p) */
-  .flow-bars{ padding:26px 30px; justify-content:center; }
+  .cmp-trans{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; gap:11px;
+    padding:12px 0; font-size:17px; font-weight:800; color:var(--accent-deep); letter-spacing:.01em; }
+  .cmp-trans .ar{ display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px;
+    border-radius:50%; background:var(--accent); color:#fff; font-size:18px; font-weight:800; box-shadow:0 4px 12px rgba(19,145,184,.3); }
+  .cmp-flow .fnode{ font-size:16px; padding:13px 16px; }
+  .cmp-flow .fnode.rep{ position:relative; }
+  .cmp-flow .fnode.rep .rmtag{ position:absolute; top:-11px; left:50%; transform:translateX(-50%);
+    font-size:10.5px; font-weight:800; color:#fff; background:#c0405a; border-radius:5px; padding:2px 8px; white-space:nowrap; letter-spacing:.02em; }
+  .cmp-flow .fnode.done .chk{ margin-left:7px; color:var(--accent); font-weight:900; }
+  /* 우측 세로 막대(4p) — 6→2h(약 3배) 강렬 대비 */
+  .flow-vbars{ padding:26px 56px 14px; }
+  .vbars{ flex:1 1 auto; display:flex; align-items:flex-end; justify-content:center; gap:128px; min-height:0; }
+  .vcol{ display:flex; flex-direction:column; align-items:center; justify-content:flex-end; }
+  .vval{ font-size:30px; font-weight:800; letter-spacing:-.01em; margin-bottom:14px; line-height:1; }
+  .vcol.before .vval{ color:var(--ink2); }
+  .vcol.after .vval{ color:var(--accent-deep); }
+  .vbar{ width:150px; border-radius:14px 14px 0 0; }
+  .vbar.before{ background:#5f6580; }
+  .vbar.after{ background:linear-gradient(180deg,var(--accent),var(--accent-deep)); }
+  .vcats{ flex:0 0 auto; display:flex; justify-content:center; gap:128px; margin-top:18px; padding-top:16px; border-top:2px solid var(--hair); }
+  .vcat{ width:150px; text-align:center; font-size:19px; font-weight:800; color:var(--ink); }
+  .vcat span{ display:block; font-size:14.5px; font-weight:600; color:var(--muted); margin-top:5px; }
   .cmp-ft{ flex:0 0 auto; margin-top:auto; padding:15px 30px; border-top:1px dashed var(--hair);
     font-size:16px; font-weight:800; color:var(--slate); letter-spacing:.01em; }
 
@@ -512,11 +535,9 @@
     <div class="cmp">
       <div class="cmp-panel cmp-left">
         <div class="cmp-kpi-wrap">
-          <div class="cmp-kpi">
-            <div class="n">20<span class="u">%</span></div>
-            <div class="tag">개선</div>
-          </div>
-          <div class="cmp-cap">핵심 레버 · <b>반복 확인 단계 제거</b></div>
+          <div class="cmp-lever-lbl">핵심 레버</div>
+          <div class="cmp-lever">반복 확인 단계 <em>제거</em></div>
+          <div class="cmp-chip">상담신청 전환율 20% 개선</div>
         </div>
         <div class="cmp-rows">
           <div class="cmp-row"><div class="rl">문제</div><div class="rt">상담신청 과정의 <b>반복 확인 단계</b>가 고객 부담·이탈 요인</div></div>
@@ -527,31 +548,31 @@
       </div>
       <div class="cmp-panel cmp-right">
         <div class="cmp-hd">
-          <div class="t">개선 전 → 개선 후</div>
-          <div class="s">신청 과정 개념도 · 실제 화면 아님</div>
+          <div class="t">신청 과정 : 개선 전 → 개선 후</div>
+          <div class="s">개념도 · 실제 화면 아님</div>
         </div>
         <div class="cmp-flow flow-steps">
-          <div class="cmp-stage">
+          <div class="cmp-stage before">
             <div class="cmp-slb before">개선 전</div>
             <div class="fchain">
               <div class="fnode">분석 요청</div>
               <div class="farrow"></div>
-              <div class="fnode rep">반복 확인</div>
+              <div class="fnode rep"><span class="rmtag">제거</span>반복 확인</div>
               <div class="farrow"></div>
-              <div class="fnode rep">반복 확인</div>
+              <div class="fnode rep"><span class="rmtag">제거</span>반복 확인</div>
               <div class="farrow"></div>
               <div class="fnode drop">이탈률 높음</div>
             </div>
           </div>
-          <div class="cmp-trans"><span class="ar">↓</span> 개선</div>
-          <div class="cmp-stage">
+          <div class="cmp-trans"><span class="ar">↓</span> 반복 확인 단계 제거</div>
+          <div class="cmp-stage after">
             <div class="cmp-slb after">개선 후</div>
             <div class="fchain">
               <div class="fnode">분석 요청</div>
               <div class="farrow"></div>
               <div class="fnode done">확인 단계 간소화</div>
               <div class="farrow"></div>
-              <div class="fnode done">상담신청 완료</div>
+              <div class="fnode done">상담신청 완료<span class="chk">✓</span></div>
             </div>
           </div>
         </div>
@@ -596,14 +617,20 @@
           <div class="t">일일 처리업무 시간 비교</div>
           <div class="s">단위 : 하루 처리업무 시간(h) · 동일 척도 비교</div>
         </div>
-        <div class="cmp-flow flow-bars">
-          <div class="tbrow">
-            <div class="tk">개선 전<span>수기 확인 중심</span></div>
-            <div class="tbbar"><div class="fillb before-fill">약 6시간</div></div>
+        <div class="cmp-flow flow-vbars">
+          <div class="vbars">
+            <div class="vcol before">
+              <div class="vval">약 6시간</div>
+              <div class="vbar before" style="height:276px"></div>
+            </div>
+            <div class="vcol after">
+              <div class="vval">약 2시간</div>
+              <div class="vbar after" style="height:92px"></div>
+            </div>
           </div>
-          <div class="tbrow">
-            <div class="tk">개선 후<span>시스템 구조화</span></div>
-            <div class="tbbar"><div class="fillb after-fill">약 2시간</div></div>
+          <div class="vcats">
+            <div class="vcat">개선 전<span>수기 확인 중심</span></div>
+            <div class="vcat">개선 후<span>시스템 구조화</span></div>
           </div>
         </div>
         <div class="cmp-ft">적용 범위 : 고물량 제조사 적용 구간의 일일 처리업무</div>
