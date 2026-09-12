@@ -216,18 +216,30 @@
     justify-content:center; min-height:0; }
   .cmp-stage.before{ background:var(--wash); border:1px solid var(--hair); }
   .cmp-stage.after{ background:#eef6fa; border:1px solid #bfe0ec; }
-  .cmp-slb{ font-size:15px; font-weight:800; letter-spacing:.04em; margin-bottom:18px; }
+  .cmp-slb{ font-size:15px; font-weight:800; letter-spacing:.04em; margin-bottom:16px; }
   .cmp-slb.before{ color:var(--slate); }
   .cmp-slb.after{ color:var(--accent-deep); }
   .cmp-trans{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; gap:11px;
-    padding:12px 0; font-size:17px; font-weight:800; color:var(--accent-deep); letter-spacing:.01em; }
+    padding:11px 0; font-size:17px; font-weight:800; color:var(--accent-deep); letter-spacing:.01em; }
   .cmp-trans .ar{ display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px;
     border-radius:50%; background:var(--accent); color:#fff; font-size:18px; font-weight:800; box-shadow:0 4px 12px rgba(19,145,184,.3); }
-  .cmp-flow .fnode{ font-size:16px; padding:13px 16px; }
-  .cmp-flow .fnode.rep{ position:relative; }
-  .cmp-flow .fnode.rep .rmtag{ position:absolute; top:-11px; left:50%; transform:translateX(-50%);
-    font-size:10.5px; font-weight:800; color:#fff; background:#c0405a; border-radius:5px; padding:2px 8px; white-space:nowrap; letter-spacing:.02em; }
-  .cmp-flow .fnode.done .chk{ margin-left:7px; color:var(--accent); font-weight:900; }
+  /* 3p 신청 여정 그리드 — 개선 전/후 세로 열 정렬로 '반복 확인 제거' 대비 */
+  .jrow{ display:grid; grid-template-columns:1fr 36px 1fr 36px 1fr 36px 1fr; align-items:center; }
+  .jn{ align-self:center; border-radius:10px; padding:14px 8px; text-align:center; font-size:15.5px;
+    font-weight:700; line-height:1.24; letter-spacing:-.005em; }
+  .jn.start{ background:#fff; border:1.5px solid var(--hair); color:var(--ink); }
+  .jn.prob{ background:#fdeef0; border:1.5px solid #f0bcc4; color:#b23a4a; position:relative; }
+  .jn.prob .rmtag{ position:absolute; top:-12px; left:50%; transform:translateX(-50%); font-size:10.5px;
+    font-weight:800; color:#fff; background:#c0405a; border-radius:5px; padding:2px 9px; white-space:nowrap; letter-spacing:.02em; }
+  .jn.exit{ background:#fff; border:1.5px dashed #cbb0b6; color:var(--muted); }
+  .jn.sol{ background:#e7f4f9; border:1.5px solid #a0d4e4; color:var(--accent-deep); }
+  .jn.done{ background:var(--accent-deep); border:1.5px solid var(--accent-deep); color:#fff; }
+  .jn.done .chk{ margin-left:6px; font-weight:900; }
+  .jar{ position:relative; height:2.5px; background:#c7cedb; align-self:center; }
+  .jar::after{ content:""; position:absolute; right:-1px; top:-4px; border-left:9px solid #c7cedb;
+    border-top:5px solid transparent; border-bottom:5px solid transparent; }
+  .cmp-stage.after .jar{ background:var(--accent); }
+  .cmp-stage.after .jar::after{ border-left-color:var(--accent); }
   /* 우측 세로 막대(4p) — 6→2h(약 3배) 강렬 대비 */
   .flow-vbars{ padding:26px 56px 14px; }
   .vbars{ flex:1 1 auto; display:flex; align-items:flex-end; justify-content:center; gap:128px; min-height:0; }
@@ -553,26 +565,26 @@
         </div>
         <div class="cmp-flow flow-steps">
           <div class="cmp-stage before">
-            <div class="cmp-slb before">개선 전</div>
-            <div class="fchain">
-              <div class="fnode">분석 요청</div>
-              <div class="farrow"></div>
-              <div class="fnode rep"><span class="rmtag">제거</span>반복 확인</div>
-              <div class="farrow"></div>
-              <div class="fnode rep"><span class="rmtag">제거</span>반복 확인</div>
-              <div class="farrow"></div>
-              <div class="fnode drop">이탈률 높음</div>
+            <div class="cmp-slb before">개선 전 · 반복 확인 2단계</div>
+            <div class="jrow">
+              <div class="jn start">분석 요청</div>
+              <div class="jar"></div>
+              <div class="jn prob"><span class="rmtag">제거</span>반복 확인</div>
+              <div class="jar"></div>
+              <div class="jn prob"><span class="rmtag">제거</span>반복 확인</div>
+              <div class="jar"></div>
+              <div class="jn exit">이탈률 높음</div>
             </div>
           </div>
           <div class="cmp-trans"><span class="ar">↓</span> 반복 확인 단계 제거</div>
           <div class="cmp-stage after">
-            <div class="cmp-slb after">개선 후</div>
-            <div class="fchain">
-              <div class="fnode">분석 요청</div>
-              <div class="farrow"></div>
-              <div class="fnode done">확인 단계 간소화</div>
-              <div class="farrow"></div>
-              <div class="fnode done">상담신청 완료<span class="chk">✓</span></div>
+            <div class="cmp-slb after">개선 후 · 한 단계로 간소화</div>
+            <div class="jrow">
+              <div class="jn start" style="grid-column:1/2">분석 요청</div>
+              <div class="jar" style="grid-column:2/3"></div>
+              <div class="jn sol" style="grid-column:3/6">확인 단계 간소화</div>
+              <div class="jar" style="grid-column:6/7"></div>
+              <div class="jn done" style="grid-column:7/8">상담신청 완료<span class="chk">✓</span></div>
             </div>
           </div>
         </div>
