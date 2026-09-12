@@ -21,6 +21,8 @@
     --accent-deep:#0c6d8c;
     --navy:#141a33;
     --navy2:#1d2547;
+    --slate:#5c6478;      /* 크롬(라벨·화살표) 중립 강등색 */
+    --slate2:#94a3b8;     /* 크롬 연회색(선·아이콘) */
     --s:1;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
@@ -42,16 +44,16 @@
     box-shadow:0 18px 60px rgba(20,26,51,.14);
   }
   .slide-header{ flex:0 0 auto; }
-  .eyebrow{ font-size:17px; font-weight:800; letter-spacing:.18em; color:var(--accent);
+  .eyebrow{ font-size:17px; font-weight:800; letter-spacing:.18em; color:var(--slate);
     text-transform:uppercase; display:inline-block; padding-bottom:9px;
-    border-bottom:3px solid var(--accent); }
+    border-bottom:2px solid #cbd2de; }
   h1{ font-size:50px; line-height:1.22; font-weight:800; color:var(--ink);
     letter-spacing:-.018em; margin-top:20px; max-width:1420px; }
   h1 .lite{ font-weight:400; color:var(--ink2); }
   h1 .em{ color:var(--accent-deep); }
-  .scope-note{ margin-top:16px; font-size:23px; font-weight:700; color:var(--accent-deep);
+  .scope-note{ margin-top:16px; font-size:20px; font-weight:600; color:var(--muted);
     letter-spacing:-.01em; display:inline-flex; align-items:center; gap:10px; }
-  .scope-note::before{ content:""; width:26px; height:3px; background:var(--accent-deep); display:inline-block; }
+  .scope-note::before{ content:""; width:22px; height:2px; background:#c3c9d6; display:inline-block; }
   .slide-content{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; min-height:0; }
   .slide-footer{ flex:0 0 auto; display:flex; align-items:flex-end; justify-content:space-between;
     font-size:17px; color:var(--muted); letter-spacing:.005em; padding-top:10px; }
@@ -67,7 +69,7 @@
 
   /* ===== COVER / CLOSING ===== */
   .slide-cover, .slide-closing{ background:var(--navy); color:#fff; padding:80px 92px 58px; }
-  .slide-cover .eyebrow, .slide-closing .eyebrow{ color:#5fd0ee; border-color:#2f7f9c; }
+  .slide-cover .eyebrow, .slide-closing .eyebrow{ color:#98a2c4; border-color:rgba(255,255,255,.18); }
   .cover-brand{ display:flex; align-items:center; gap:14px; font-size:16px; font-weight:600;
     letter-spacing:.02em; color:#b3bcda; }
   .cover-brand .dot{ width:9px; height:9px; border-radius:50%; background:#5fd0ee; }
@@ -87,16 +89,16 @@
   .cap-map{ width:100%; }
   .cap-head, .cap-row{ display:grid; grid-template-columns:2.3fr 2.7fr 0.5fr 2.7fr 1.7fr; gap:18px; align-items:center; }
   .cap-head{ padding:0 6px 13px; border-bottom:2.5px solid var(--ink); }
-  .cap-head .ch{ font-size:16px; font-weight:800; letter-spacing:.03em; color:var(--muted); }
+  .cap-head .ch{ font-size:19px; font-weight:800; letter-spacing:.02em; color:#334155; }
   .cap-row{ padding:20px 6px; border-bottom:1px solid var(--hair); min-width:0; }
   .cap-row .dom{ font-size:24px; font-weight:800; color:var(--ink); min-width:0; }
-  .cap-row .dom span{ display:block; font-size:15.5px; font-weight:600; color:var(--muted); margin-top:5px; letter-spacing:.01em; }
+  .cap-row .dom span{ display:block; font-size:16.5px; font-weight:600; color:#5b6478; margin-top:5px; letter-spacing:.01em; }
   .cap-row .cell{ font-size:19.5px; line-height:1.4; color:var(--ink2); min-width:0; font-weight:500; }
-  .cap-row .cell .k{ display:block; font-size:14.5px; font-weight:800; letter-spacing:.04em; color:var(--accent-deep); margin-bottom:5px; }
-  .cap-row .uo-arrow{ text-align:center; color:var(--accent); font-size:24px; font-weight:800; line-height:1; }
+  .cap-row .cell .k{ display:block; font-size:14.5px; font-weight:800; letter-spacing:.04em; color:var(--slate); margin-bottom:5px; }
+  .cap-row .uo-arrow{ text-align:center; color:#b7bdcb; font-size:22px; font-weight:600; line-height:1; }
   .cap-row .proof{ justify-self:start; font-size:19px; font-weight:800; letter-spacing:.01em;
-    color:#fff; background:var(--accent-deep); border:none; border-radius:999px; padding:10px 22px; white-space:nowrap;
-    box-shadow:0 4px 12px rgba(12,109,140,.22); }
+    color:#334155; background:#eef1f6; border:none; border-radius:999px; padding:10px 22px; white-space:nowrap;
+    box-shadow:none; }
   .content-caption{ margin-top:28px; padding:20px 28px; background:var(--navy); border-radius:10px;
     font-size:25px; color:#fff; letter-spacing:-.012em; display:flex; align-items:center; gap:16px; }
   .content-caption .lead{ flex:0 0 auto; font-size:15px; font-weight:800; letter-spacing:.08em; color:#5fd0ee; }
@@ -115,7 +117,7 @@
   .qpe{ margin-top:26px; }
   .qpe .row{ display:grid; grid-template-columns:118px 1fr; gap:18px; padding:18px 0; border-top:1px solid var(--hair); align-items:baseline; }
   .qpe .row:last-child{ border-bottom:1px solid var(--hair); }
-  .qpe .lb{ font-size:17px; font-weight:800; letter-spacing:.02em; color:var(--accent-deep); }
+  .qpe .lb{ font-size:17px; font-weight:800; letter-spacing:.02em; color:var(--slate); }
   .qpe .tx{ font-size:20px; line-height:1.45; color:var(--ink2); font-weight:500; }
   .qpe .tx b{ color:var(--ink); font-weight:800; }
   .case-right{ display:flex; flex-direction:column; justify-content:space-between; }
@@ -154,7 +156,7 @@
   .tbbar{ position:relative; height:72px; }
   .tbbar .fillb{ position:absolute; left:0; top:0; height:100%; border-radius:6px; display:flex;
     align-items:center; padding:0 20px; color:#fff; font-weight:800; font-size:27px; letter-spacing:-.01em; }
-  .tbbar .before-fill{ width:100%; background:#aab1c7; }
+  .tbbar .before-fill{ width:100%; background:#5f6580; }
   .tbbar .after-fill{ width:33.33%; background:linear-gradient(90deg,var(--accent),var(--accent-deep)); }
   .tb-scope{ margin-top:24px; padding-top:18px; border-top:1px dashed var(--hair);
     font-size:17px; font-weight:800; color:var(--accent-deep); }
@@ -168,39 +170,45 @@
   /* S4(THK) left column impact headline — scoped, does not affect S3 */
   .s-thk .big-metric .num{ font-size:128px; }
   .s-thk .big-metric .num .pre{ font-size:.34em; font-weight:800; color:var(--muted); letter-spacing:0; margin-right:.06em; }
+  .s-thk .big-metric .tag{ background:none; border:none; padding:0 0 0 4px; margin-bottom:30px; color:var(--slate); font-weight:800; }
+  /* S3(굿리치) 우측 다이어그램 종속화(20%가 지배) */
+  .s-good .ba{ padding:20px 24px; }
+  .s-good .ba + .ba{ margin-top:14px; }
+  .s-good .fnode{ font-size:16px; padding:11px 13px; }
 
   /* ===== S5 EMR ===== */
   .emr-flow{ display:flex; align-items:center; gap:0; margin-bottom:6px; }
-  .emr-flow .pt-lbl{ flex:0 0 auto; font-size:16px; font-weight:800; letter-spacing:.03em; color:var(--accent-deep); margin-right:22px; }
+  .emr-flow .pt-lbl{ flex:0 0 auto; font-size:16px; font-weight:800; letter-spacing:.03em; color:var(--slate); margin-right:22px; }
   .emr-flow .step{ flex:0 0 auto; font-size:21px; font-weight:800; color:var(--ink); background:var(--paper);
     border:1.5px solid var(--hair); border-radius:9px; padding:16px 26px; }
-  .emr-flow .chev{ flex:1 1 auto; height:2.5px; background:var(--accent); position:relative; margin:0 10px; min-width:22px; }
-  .emr-flow .chev::after{ content:""; position:absolute; right:-1px; top:-5px; border-left:11px solid var(--accent);
+  .emr-flow .chev{ flex:1 1 auto; height:2.5px; background:#cbd2de; position:relative; margin:0 10px; min-width:22px; }
+  .emr-flow .chev::after{ content:""; position:absolute; right:-1px; top:-5px; border-left:11px solid #cbd2de;
     border-top:6px solid transparent; border-bottom:6px solid transparent; }
   .emr-layers{ margin-top:28px; display:grid; grid-template-columns:1.9fr 1fr; gap:30px; align-items:start; }
   .emr-core{ position:relative; background:#eaf5fa; border:2px solid var(--accent); border-radius:14px; padding:28px 26px 22px; }
   .emr-core .core-tag{ position:absolute; top:-15px; left:26px; background:var(--accent); color:#fff; font-size:14px;
     font-weight:800; letter-spacing:.05em; padding:6px 18px; border-radius:999px; box-shadow:0 4px 12px rgba(19,145,184,.28); }
-  .lyr{ display:flex; align-items:center; gap:20px; border:1.5px solid #b3dbe9; border-radius:11px; background:#fff;
-    padding:17px 24px; box-shadow:0 3px 12px rgba(19,145,184,.1); }
+  .lyr{ display:flex; align-items:center; gap:20px; border:1.5px solid var(--hair); border-radius:11px; background:#fff;
+    padding:17px 24px; box-shadow:0 3px 12px rgba(20,26,51,.05); }
   .lyr.hub{ border:2.5px solid var(--accent); box-shadow:0 6px 20px rgba(19,145,184,.2); }
-  .lyr .ic{ flex:0 0 52px; width:52px; height:52px; border-radius:12px; background:var(--accent); color:#fff;
+  .lyr .ic{ flex:0 0 52px; width:52px; height:52px; border-radius:12px; background:var(--slate2); color:#fff;
     display:flex; align-items:center; justify-content:center; }
-  .lyr.hub .ic{ background:var(--accent-deep); }
+  .lyr.hub .ic{ background:var(--accent); }
   .lyr .lt{ font-size:22px; font-weight:800; color:var(--ink); }
-  .lyr .lt span{ display:block; font-size:15px; font-weight:600; color:var(--muted); margin-top:4px; line-height:1.35; }
+  .lyr.hub .lt{ font-size:24px; }
+  .lyr .lt span{ display:block; font-size:15px; font-weight:600; color:#5b6478; margin-top:4px; line-height:1.35; }
   .lyr-conn{ display:flex; align-items:center; justify-content:center; gap:10px; padding:9px 0; }
-  .lyr-conn .clbl{ font-size:14.5px; font-weight:800; color:var(--accent-deep); background:#fff;
-    border:1.5px solid #b3dbe9; border-radius:999px; padding:5px 16px; }
-  .lyr-conn svg{ color:var(--accent); flex:0 0 auto; }
+  .lyr-conn .clbl{ font-size:14.5px; font-weight:800; color:var(--slate); background:#fff;
+    border:1.5px solid var(--hair); border-radius:999px; padding:5px 16px; }
+  .lyr-conn svg{ color:var(--slate2); flex:0 0 auto; }
   .prop-box{ border:2px dashed var(--faint); border-radius:9px;
     background:repeating-linear-gradient(135deg,#fafbfd,#fafbfd 10px,#f1f3f8 10px,#f1f3f8 20px);
     padding:22px 26px; display:flex; flex-direction:column; justify-content:center; }
   .prop-box .pk{ font-size:16px; font-weight:800; letter-spacing:.02em; color:var(--muted); margin-bottom:16px; }
   .prop-box .pi{ font-size:19px; font-weight:700; color:var(--ink2); line-height:1.35; padding:11px 0; }
   .prop-box .pi + .pi{ border-top:1px dashed var(--hair); }
-  .prop-box .pi.note{ color:var(--ink2); font-weight:700; font-size:17px; background:var(--paper);
-    margin-top:6px; padding:8px 12px; border-radius:5px; }
+  .prop-box .pi.note{ color:var(--muted); font-weight:600; font-size:15px; background:none;
+    margin-top:2px; padding:8px 0 0; border-radius:0; }
   .emr-bottom{ margin-top:28px; display:grid; grid-template-columns:auto 1fr; gap:36px; align-items:center; }
   .legend{ display:flex; flex-direction:column; gap:12px; font-size:16.5px; }
   .legend .lg{ display:flex; align-items:center; gap:12px; color:var(--ink2); font-weight:600; }
@@ -238,8 +246,8 @@
   /* ===== S7 AI split ===== */
   .ai-split{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1.5px solid var(--hair); border-radius:8px; overflow:hidden; position:relative; }
   .ai-mid{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:3;
-    width:54px; height:54px; border-radius:50%; background:var(--accent); color:#fff;
-    display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:800;
+    width:62px; height:62px; border-radius:50%; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:32px; font-weight:800;
     box-shadow:0 6px 18px rgba(19,145,184,.35); border:3px solid var(--ivory); }
   .ai-col.next li{ display:flex; align-items:baseline; gap:13px; padding:14px 0; }
   .ai-col.next li::before{ display:none; }
@@ -249,7 +257,7 @@
   .ai-col.now{ background:var(--paper); }
   .ai-col.next{ background:var(--wash); border-left:1.5px solid var(--hair); }
   .ai-col .tense{ font-size:15px; font-weight:800; letter-spacing:.08em; color:var(--muted); }
-  .ai-col.next .tense{ color:var(--accent-deep); }
+  .ai-col.next .tense{ color:var(--slate); }
   .ai-col h3{ font-size:26px; font-weight:800; color:var(--ink); margin-top:9px; letter-spacing:-.01em; }
   .ai-col ul{ list-style:none; margin-top:20px; }
   .ai-col li{ position:relative; padding:13px 0 13px 24px; font-size:20px; line-height:1.45; color:var(--ink2); font-weight:500; }
@@ -261,8 +269,8 @@
     border-radius:6px; padding:22px 28px; display:flex; align-items:center; gap:24px; }
   .ai-example .ek{ font-size:16px; font-weight:800; letter-spacing:.03em; color:var(--accent-deep); flex:0 0 auto; }
   .ai-example .ex{ font-size:21px; font-weight:700; color:var(--ink); line-height:1.45; }
-  .ai-example .ex b{ color:var(--accent-deep); }
-  .ai-example .caveat{ display:block; font-size:16px; font-weight:500; color:var(--muted); margin-top:6px; }
+  .ai-example .ex b{ color:var(--ink); }
+  .ai-example .caveat{ display:block; font-size:16px; font-weight:500; color:#565b70; margin-top:6px; }
 
   /* ===== S8 stages ===== */
   .stages{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; align-items:stretch; }
@@ -278,8 +286,9 @@
   .stage-c .res{ margin-top:auto; padding-top:16px; border-top:1px solid var(--hair);
     font-size:19px; line-height:1.4; font-weight:800; color:var(--accent-deep); }
   .stage-c .res .rk{ display:block; font-size:13.5px; font-weight:800; letter-spacing:.06em; color:var(--muted); margin-bottom:6px; }
-  .loopback{ margin-top:24px; display:flex; align-items:center; justify-content:center; gap:12px;
-    font-size:17px; font-weight:700; color:var(--muted); }
+  .loopback{ margin-top:20px; padding-top:16px; border-top:2px dashed var(--accent);
+    display:flex; align-items:center; justify-content:center; gap:12px;
+    font-size:18px; font-weight:800; color:var(--accent-deep); }
   .loopback svg{ color:var(--accent); }
   .stage-bottom{ margin-top:22px; background:var(--navy); border-radius:10px;
     padding:22px 30px; font-size:22px; line-height:1.5; color:#fff; letter-spacing:-.01em; }
@@ -291,16 +300,16 @@
     display:flex; flex-direction:column; }
   .hyp .hh{ background:var(--navy); color:#fff; padding:22px 28px; }
   .hyp .hh .tag{ font-size:15px; font-weight:700; letter-spacing:.04em; color:#5fd0ee; }
-  .hyp .hh .ht{ margin-top:8px; font-size:31px; font-weight:800; line-height:1.2; letter-spacing:-.014em; }
+  .hyp .hh .ht{ margin-top:8px; font-size:26px; font-weight:800; line-height:1.22; letter-spacing:-.014em; }
   .hyp .hb{ padding:10px 28px 12px; display:flex; flex-direction:column; justify-content:space-between; flex:1 1 auto; }
   .hyp .hrow{ display:grid; grid-template-columns:66px 1fr; gap:16px; padding:15px 0; align-items:baseline; border-top:1px solid var(--hair2); }
   .hyp .hrow:first-child{ border-top:none; }
-  .hyp .hrow .rk{ font-size:15px; font-weight:800; letter-spacing:.02em; color:var(--muted); }
+  .hyp .hrow .rk{ font-size:15.5px; font-weight:800; letter-spacing:.02em; color:#334155; }
   .hyp .hrow .rv{ font-size:20px; line-height:1.4; color:var(--ink2); font-weight:500; }
   .hyp .hrow .rv b{ color:var(--ink); font-weight:800; }
-  .hyp .hrow.kpi .rk{ color:var(--accent-deep); }
-  .hyp .hrow.kpi .rv{ color:var(--accent-deep); font-weight:800; }
-  .hyp .gate{ background:var(--navy); padding:18px 28px; display:grid; grid-template-columns:66px 1fr; gap:16px; align-items:baseline; }
+  .hyp .hrow.kpi .rk{ color:#334155; }
+  .hyp .hrow.kpi .rv{ color:var(--ink2); font-weight:500; }
+  .hyp .gate{ background:var(--navy2); border-top:3px solid var(--accent); padding:18px 28px; display:grid; grid-template-columns:66px 1fr; gap:16px; align-items:baseline; }
   .hyp .gate .rk{ font-size:15px; font-weight:800; letter-spacing:.02em; color:#5fd0ee; }
   .hyp .gate .rv{ font-size:19px; line-height:1.4; color:#fff; font-weight:700; }
   .hyp .gate .rv b{ color:#5fd0ee; }
@@ -317,9 +326,9 @@
   .evid .e{ flex:1; padding-right:30px; }
   .evid .e + .e{ padding-left:30px; border-left:1px solid rgba(255,255,255,.15); }
   .evid .e .en{ font-size:18px; font-weight:800; letter-spacing:.14em; color:rgba(95,208,238,.5); }
-  .evid .e .ek{ margin-top:6px; font-size:34px; font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1; }
+  .evid .e .ek{ margin-top:6px; font-size:26px; font-weight:700; color:#e6ebf6; letter-spacing:-.02em; line-height:1; }
   .evid .e .ed{ margin-top:14px; font-size:17px; font-weight:500; color:#98a2c4; line-height:1.42; letter-spacing:-.005em; }
-  .close-line{ font-size:33px; font-weight:700; line-height:1.4; color:#ccd3e7; letter-spacing:-.012em; max-width:1340px; }
+  .close-line{ font-size:26px; font-weight:600; line-height:1.45; color:#ccd3e7; letter-spacing:-.012em; max-width:1340px; }
   .close-line .em{ color:#fff; font-weight:800; }
 
   /* ===== 공간 활용·강약 업그레이드 (S6/S7/S8) ===== */
@@ -331,12 +340,12 @@
   .s6-teams{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
   .s6-team{ border:1.5px solid var(--hair); border-radius:12px; background:var(--paper); padding:24px 28px;
     display:flex; align-items:baseline; justify-content:space-between; gap:12px; box-shadow:0 3px 10px rgba(20,26,51,.05); }
-  .s6-team.own{ border:2px solid var(--accent); background:#f2fafc; }
+  .s6-team.own{ border:1.5px solid var(--hair); background:var(--paper); border-left:5px solid var(--accent); }
   .s6-team .tn{ font-size:26px; font-weight:800; color:var(--ink); }
-  .s6-team .rl{ font-size:15.5px; font-weight:700; color:var(--muted); white-space:nowrap; }
+  .s6-team .rl{ font-size:16.5px; font-weight:700; color:#5b6478; white-space:nowrap; }
   .s6-team.own .rl{ color:var(--accent-deep); }
   .s6-cols{ display:grid; grid-template-columns:1fr 1fr; gap:72px; }
-  .s6-col .h{ font-size:18px; font-weight:800; color:var(--accent-deep); padding-bottom:14px; border-bottom:2.5px solid var(--hair); margin-bottom:4px; }
+  .s6-col .h{ font-size:18px; font-weight:700; color:#334155; padding-bottom:14px; border-bottom:2.5px solid var(--hair); margin-bottom:4px; }
   .s6-col ul{ list-style:none; }
   .s6-col li{ position:relative; padding:16px 0 16px 24px; font-size:20px; line-height:1.4; color:var(--ink2); font-weight:500; border-bottom:1px solid var(--hair2); }
   .s6-col li::before{ content:""; position:absolute; left:0; top:25px; width:9px; height:9px; background:var(--accent); border-radius:50%; }
@@ -349,17 +358,17 @@
 
   /* S8 — 타임라인 4단계(공간 채움) */
   .s8-track{ position:relative; margin-top:6px; }
-  .s8-line{ position:absolute; top:27px; left:27px; right:27px; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent-deep)); border-radius:2px; }
+  .s8-line{ position:absolute; top:27px; left:27px; right:27px; height:3px; background:#cbd2de; border-radius:2px; }
   .s8-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:30px; position:relative; }
   .s8-step{ display:flex; flex-direction:column; }
   .s8-step .sn{ width:56px; height:56px; border-radius:50%; background:var(--accent); color:#fff; display:flex;
     align-items:center; justify-content:center; font-weight:800; font-size:23px; border:5px solid var(--ivory); box-shadow:0 0 0 2px var(--accent); }
-  .s8-step:last-child .sn{ background:var(--ink); box-shadow:0 0 0 2px var(--ink); }
+  .s8-step:last-child .sn{ background:var(--accent); box-shadow:0 0 0 2px var(--accent); }
   .s8-step .snm{ margin-top:24px; font-size:25px; font-weight:800; color:var(--ink); letter-spacing:-.012em; line-height:1.22; }
   .s8-step .sq{ margin-top:16px; font-size:18px; line-height:1.5; color:var(--ink2); font-weight:500; flex:1 1 auto; }
-  .s8-step .res{ margin-top:18px; padding:16px 18px; background:var(--wash); border-radius:9px; border-left:4px solid var(--accent); }
+  .s8-step .res{ margin-top:18px; padding:16px 18px; background:var(--wash); border-radius:9px; border-left:4px solid #cbd2de; }
   .s8-step .res .rk{ display:block; font-size:12.5px; font-weight:800; letter-spacing:.06em; color:var(--muted); margin-bottom:6px; }
-  .s8-step .res .rv{ font-size:18px; font-weight:800; color:var(--accent-deep); line-height:1.32; }
+  .s8-step .res .rv{ font-size:18px; font-weight:800; color:var(--ink); line-height:1.32; }
 
   /* ---- print ---- */
   @page{ size:1600px 900px; margin:0; }
@@ -383,11 +392,10 @@
   <div class="cover-main">
     <div class="eyebrow">면접 발표</div>
     <h1 style="margin-top:30px">대표 프로젝트 성과와<br><span class="em">DAI 플랫폼 구축 기여 방안</span></h1>
-    <div class="cover-sub">AI 헬스케어 플랫폼 팀장 지원</div>
+    <div class="cover-sub" style="color:#c7d0de">사용자와 현장의 문제를 제품과 운영의 개선으로 연결해 왔습니다</div>
     <div class="cover-name">
       <span class="nm">정치성</span><span class="dt">· 2026.09.16</span>
     </div>
-    <div class="cover-intro">사용자와 현장의 문제를 제품과 운영의 개선으로 연결해 온 경험</div>
   </div>
   <div class="cover-foot">
     <span>2026 · 임원 면접 발표</span>
@@ -440,7 +448,7 @@
         <div class="proof">조직 실행</div>
       </div>
     </div>
-    <div class="content-caption"><span>네 곳 모두 <b>사용자가 할 일</b>과 <b>현장이 처리할 일</b>을 함께 설계했습니다. <span class="em">그것이 하나의 역량입니다.</span></span></div>
+    <div class="content-caption"><span>네 곳 모두 사용자가 할 일과 현장이 처리할 일을 함께 설계했습니다. <b>그것이 하나의 역량입니다.</b></span></div>
   </div>
   <footer class="slide-footer">
     <div class="source"></div><div class="page-number">02 / 10</div>
@@ -448,26 +456,26 @@
 </section></div>
 
 <!-- ============ 03 굿리치 ============ -->
-<div class="stage"><section class="slide">
+<div class="stage"><section class="slide s-good">
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">사례 01 · 굿리치</div>
-    <h1>보험분석 상담신청 페이지 <span class="em">전환율 20% 개선</span></h1>
+    <h1>보험분석 상담신청 페이지 전환율 20% 개선</h1>
     <div class="scope-note">페이지 수정 전 대비, 해당 페이지의 상담신청 전환율</div>
   </header>
   <div class="slide-content">
     <div class="case-split">
       <div class="case-left">
         <div class="big-metric">
-          <div class="num accent-num">20<span class="u">%</span></div>
+          <div class="num accent-num">20<span class="u" style="color:var(--accent-deep)">%</span></div>
           <div class="tag">개선</div>
         </div>
-        <div class="metric-cap">보험분석 상담신청 페이지</div>
+        <div class="metric-cap">핵심 레버 : <b>반복 확인 단계 제거</b></div>
         <div class="qpe">
           <div class="row"><div class="lb">문제</div><div class="tx">상담신청 과정의 <b>반복 확인 단계</b>가 고객 부담·이탈 요인</div></div>
-          <div class="row"><div class="lb">실행</div><div class="tx">반복 부담을 확인하고, <b>확인 단계와 신청 흐름을 개선</b></div></div>
+          <div class="row"><div class="lb">실행</div><div class="tx">반복 부담을 확인하고, 확인 단계와 <b>신청 흐름</b>을 개선</div></div>
           <div class="row"><div class="lb">결과</div><div class="tx">수정 반영 후 전환율 <b>기존 대비 20% 개선</b></div></div>
-          <div class="row"><div class="lb">함께 확인</div><div class="tx">설계사 <b>클레임 비율</b>도 함께 점검해 상담 정보 품질 확인</div></div>
+          <div class="row"><div class="lb">함께 확인</div><div class="tx">설계사 클레임 비율도 함께 점검해 상담 정보 품질 확인</div></div>
         </div>
       </div>
       <div class="case-right">
@@ -481,11 +489,11 @@
             <div class="farrow"></div>
             <div class="fnode rep">반복 확인</div>
             <div class="farrow"></div>
-            <div class="fnode drop">이탈</div>
+            <div class="fnode drop">이탈률 높음</div>
           </div>
         </div>
         <div class="ba after">
-          <div class="bhead"><div class="bt">개선 후</div><div class="imp">▲ 20%</div></div>
+          <div class="bhead"><div class="bt">개선 후</div></div>
           <div class="fchain">
             <div class="fnode">분석 요청</div>
             <div class="farrow"></div>
@@ -507,8 +515,8 @@
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">사례 02 · THK</div>
-    <h1>직배송 확인 업무를 <span class="em">시스템으로 구조화</span></h1>
-    <div class="scope-note">일일 처리업무 약 6시간 → 약 2시간 · 고물량 제조사 적용 구간 기준</div>
+    <h1>직배송 확인 업무를 시스템화해 일 처리시간을 단축</h1>
+    <div class="scope-note">고물량 제조사 적용 구간 기준</div>
   </header>
   <div class="slide-content">
     <div class="case-split">
@@ -520,12 +528,12 @@
         <div class="metric-cap"><b>일일 처리업무 시간</b> 기준</div>
         <div class="qpe">
           <div class="row"><div class="lb">개선 전</div><div class="tx">재고 미보유 주문의 <b>수기 확인</b>·제조사 개별 연락, 진행·예외 확인에 업무 집중</div></div>
-          <div class="row"><div class="lb">본인 변경</div><div class="tx"><b>주문 상태·처리 흐름</b>을 정리하고, 담당 업무·예외 처리를 <b>관리자 시스템</b>에 반영</div></div>
-          <div class="row"><div class="lb">적용</div><div class="tx">제조사별 <b>운영 여건에 맞춰</b> 적용</div></div>
+          <div class="row"><div class="lb">본인 변경</div><div class="tx">주문 상태·처리 흐름을 정리하고, 담당 업무·예외 처리를 <b>관리자 시스템</b>에 반영</div></div>
+          <div class="row"><div class="lb">적용</div><div class="tx">제조사별 운영 여건에 맞춰 적용</div></div>
         </div>
         <div class="aux">
           <div class="an">약 30<span>%</span></div>
-          <div class="at"><span class="lbl">보조 근거 · 수급자 조회·관리 기능 이용률</span>수급자 자격·급여 기준·구매 정보 조회·관리 기능을 함께 <b>고도화</b></div>
+          <div class="at"><span class="lbl">보조 근거 · 수급자 조회·관리 기능 이용률</span>수급자 대상 직배송이라 자격·급여 기준·구매 정보 조회가 함께 필요 — 관련 조회·관리 기능도 <b>고도화</b></div>
         </div>
       </div>
       <div class="case-right">
@@ -555,7 +563,7 @@
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">사례 03 · 병원 원무</div>
-    <h1>EMR API와 환자 이용 흐름을 연결한 <span class="em">원무 서비스 기획</span></h1>
+    <h1>기존 EMR API로 예약~수납 원무를 환자 모바일에 연결</h1>
   </header>
   <div class="slide-content">
     <div class="emr-flow">
@@ -575,7 +583,7 @@
         <div class="lyr-conn"><svg width="16" height="22" viewBox="0 0 16 22" fill="none"><path d="M8 3v16M4 7l4-4 4 4M4 15l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="clbl">기존 API 연동 · 수행</span></div>
         <div class="lyr hub">
           <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="lt">기존 EMR API<span>업체가 제공하는 데이터 · 기능 범위</span></div>
+          <div class="lt">기존 EMR API<span>업체 제공 데이터·기능을 그대로 재사용</span></div>
         </div>
         <div class="lyr-conn"><svg width="16" height="22" viewBox="0 0 16 22" fill="none"><path d="M8 3v16M4 7l4-4 4 4M4 15l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="clbl">원무 절차 기반 조율 · 수행</span></div>
         <div class="lyr">
@@ -612,7 +620,7 @@
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">사례 04 · 코나아이</div>
-    <h1>여러 사업의 요청을 <span class="em">우선순위와 팀별 책임</span>으로 정리</h1>
+    <h1>복잡한 요청도 선택안 비교로 정리해 <span class="em">경영진 결정을 돕습니다</span></h1>
   </header>
   <div class="slide-content fill-between">
     <div>
@@ -627,21 +635,21 @@
       <div class="s6-col">
         <div class="h">우선순위 판단 기준</div>
         <ul>
-          <li>외부와 <b>합의한 일정·약속</b></li>
-          <li>법률·운영 <b>위험</b></li>
-          <li>여러 요청을 함께 해결할 <b>공통 과제</b></li>
+          <li>외부와 합의한 일정·약속</li>
+          <li>법률·운영 위험</li>
+          <li>여러 요청을 함께 해결할 공통 과제</li>
         </ul>
       </div>
       <div class="s6-col">
         <div class="h">실행 관리</div>
         <ul>
-          <li>업무 배분과 <b>백로그 정리</b></li>
-          <li>PRD 목적·KPI ↔ <b>상세기획 연결</b> 확인</li>
-          <li><b>Figma</b> 기반 산출물 공유·협업</li>
+          <li>업무 배분과 백로그 정리</li>
+          <li>PRD 목적·KPI ↔ 상세기획 연결 확인</li>
+          <li>Figma 기반 산출물 공유·협업</li>
         </ul>
       </div>
     </div>
-    <div class="apply-line"><span class="k">DAI 적용</span>어려운 요구가 생기면 <b>범위·일정·내부 인력·외부 협업</b>의 선택안을 비교하고, 경영진 판단이 필요한 사안에는 <b>추천안</b>을 제시하겠습니다.</div>
+    <div class="apply-line"><span class="k">DAI 적용</span>어려운 요구는 범위·일정·인력·협업 선택안을 비교하고, 경영진엔 <b>추천안 1개</b>를 제시하겠습니다.</div>
   </div>
   <footer class="slide-footer">
     <div class="source"></div><div class="page-number">06 / 10</div>
@@ -653,22 +661,22 @@
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">AI 활용 · 적용 기준</div>
-    <h1>AI로 요구사항을 구체화하고, <span class="em">적용 효과와 운영 품질</span>을 함께 검토</h1>
+    <h1>AI로 초안은 빠르게, 정식 적용은 <span class="em">4가지 기준으로 판단</span></h1>
   </header>
   <div class="slide-content fill-between">
     <div class="ai-split">
       <div class="ai-col now">
-        <div class="tense">지금까지 · 수행 · 만든다</div>
+        <div class="tense">지금까지 · 만든다</div>
         <h3>AI로 초안을 빠르게 만든다</h3>
         <ul>
-          <li>PRD · 기능정의 · <b>프로토타입 제작</b></li>
-          <li>테스트 데이터를 연결한 <b>작동 프로토타입</b></li>
-          <li>사내 운영 업무의 <b>도구화 · 자동화</b></li>
+          <li>PRD · 기능정의 · 프로토타입 제작</li>
+          <li>테스트 데이터를 연결한 작동 프로토타입</li>
+          <li>사내 운영 업무의 도구화 · 자동화</li>
         </ul>
       </div>
       <div class="ai-mid">→</div>
       <div class="ai-col next">
-        <div class="tense">DAI · 적용 · 판단한다</div>
+        <div class="tense">DAI · 판단한다</div>
         <h3>정식 적용은 4가지 기준으로</h3>
         <ul>
           <li><span class="chip">효과</span>어떤 사용자·운영 문제를 개선하는가</li>
@@ -695,9 +703,9 @@
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">DAI 기여 · 판단 방식</div>
-    <h1>사업 목표와 실행 조건에 따라 <span class="em">검증하고 확장</span></h1>
+    <h1>단계마다 검증하고 되돌리며 <span class="em">리스크를 통제</span>합니다</h1>
   </header>
-  <div class="slide-content fill-between">
+  <div class="slide-content">
     <div class="s8-top">
     <div class="s8-track">
       <div class="s8-line"></div>
@@ -745,7 +753,7 @@
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">DAI 기여 · 첫 검증 가설</div>
-    <h1>먼저 증명할 <span class="em">두 가지 실행 가설</span></h1>
+    <h1>소규모로 먼저 검증하고, 조건을 넘을 때만 <span class="em">확대</span>합니다</h1>
   </header>
   <div class="slide-content">
     <div class="hyps">
@@ -755,9 +763,9 @@
           <div class="ht">흩어진 접점을 하나로 잇는다</div>
         </div>
         <div class="hb">
-          <div class="hrow"><div class="rk">가설</div><div class="rv">접점이 한 여정으로 이어지면 <b>측정 지속·다음 행동 연결</b>이 는다</div></div>
+          <div class="hrow"><div class="rk">가설</div><div class="rv">접점이 한 여정으로 이어지면 측정이 지속되고 다음 행동으로 이어집니다</div></div>
           <div class="hrow"><div class="rk">근거</div><div class="rv">그룹이 유통·판매하는 진단·모니터링·관리 접점(닥터눈·하이카디·케어센스에어)</div></div>
-          <div class="hrow"><div class="rk">검증</div><div class="rv">동의·규제 확보를 전제로, 만성질환자 일부에게 <b>두 접점을 먼저 연결</b></div></div>
+          <div class="hrow"><div class="rk">검증</div><div class="rv">동의·규제 확보를 전제로, 만성질환자 일부에게 두 접점을 먼저 연결</div></div>
           <div class="hrow kpi"><div class="rk">KPI</div><div class="rv">측정 지속률 · 다음 행동 연결률 · 안전 인시던트(발생 여부·건수)</div></div>
         </div>
         <div class="gate"><div class="rk">판단</div><div class="rv">지표 개선 + 동의·규제 통과 → <b>확대</b> / 미달 → 보류</div></div>
@@ -768,15 +776,15 @@
           <div class="ht">데이터를 모아 다시 쓴다</div>
         </div>
         <div class="hb">
-          <div class="hrow"><div class="rk">가설</div><div class="rv">접점 데이터를 표준으로 모으면 <b>개선·근거에 다시 쓸 수 있다</b></div></div>
-          <div class="hrow"><div class="rk">근거</div><div class="rv">접점이 따로 돌면 데이터도 흩어진다</div></div>
-          <div class="hrow"><div class="rk">검증</div><div class="rv">한 여정에서 <b>공통 데이터 기준</b>을 정해 소규모 시험</div></div>
+          <div class="hrow"><div class="rk">가설</div><div class="rv">접점 데이터를 표준으로 모으면 개선·근거에 다시 쓸 수 있습니다</div></div>
+          <div class="hrow"><div class="rk">가정</div><div class="rv">접점이 따로 돌면 데이터도 흩어진다(근거는 입사 후 확인)</div></div>
+          <div class="hrow"><div class="rk">검증</div><div class="rv">한 여정에서 공통 데이터 기준을 정해 소규모 시험</div></div>
           <div class="hrow kpi"><div class="rk">KPI</div><div class="rv">데이터 완결성(표준 충족률) · 재사용 건수</div></div>
         </div>
         <div class="gate"><div class="rk">판단</div><div class="rv">완결성·재사용 확인 + 동의·보안·규제 통과 → <b>확대</b></div></div>
       </div>
     </div>
-    <div class="hyp-safe">확정된 계획이 아니라 <b>입사 후 살펴보며 정할 가설</b>입니다. <b>KPI 목표치는 입사 후 합의</b>하며, 데이터는 환자 동의·보안·규제 범위 안에서만 씁니다.</div>
+    <div class="hyp-safe">확정된 계획이 아니라 <b>입사 후 살펴보며 정할 가설</b>입니다. KPI 목표치는 입사 후 합의하며, 데이터는 환자 동의·보안·규제 범위 안에서만 씁니다.</div>
   </div>
   <footer class="slide-footer">
     <div class="source">공개 자산 기반 검증 가설(확정 아님) · 특정 환자 데이터 권한 확보 가정 안 함</div><div class="page-number">09 / 10</div>
@@ -790,12 +798,12 @@
     <div class="eyebrow" style="margin-bottom:40px">맺음말</div>
     <div class="close-title">DAI의 사업 과제를<br><span class="em">제품과 운영</span>으로 구체화하겠습니다</div>
     <div class="evid">
-      <div class="e"><div class="en">01</div><div class="ek">전환</div><div class="ed">사용자 행동과 사업 전환을 함께 봤습니다</div></div>
-      <div class="e"><div class="en">02</div><div class="ek">운영</div><div class="ed">현장 처리 업무를 시스템으로 구조화했습니다</div></div>
-      <div class="e"><div class="en">03</div><div class="ek">연동</div><div class="ed">현장 업무와 외부 시스템을 연결했습니다</div></div>
-      <div class="e"><div class="en">04</div><div class="ek">실행</div><div class="ed">우선순위를 정하고 여러 팀의 실행을 이끌었습니다</div></div>
+      <div class="e"><div class="en">01</div><div class="ek">전환</div></div>
+      <div class="e"><div class="en">02</div><div class="ek">구조화</div></div>
+      <div class="e"><div class="en">03</div><div class="ek">연동</div></div>
+      <div class="e"><div class="en">04</div><div class="ek">실행</div></div>
     </div>
-    <div class="close-line">필요한 전문성과 협업하며, <span class="em">판단의 근거와 실행 결과를 끝까지 설명</span>하는 팀장이 되겠습니다.</div>
+    <div class="close-line">필요한 전문성과 협업하며, 판단의 근거와 실행 결과를 <span class="em">끝까지 설명</span>하는 팀장이 되겠습니다.</div>
   </div>
   <div class="cover-foot">
     <span>감사합니다. 질문 부탁드립니다. &nbsp;·&nbsp; 정치성</span>
