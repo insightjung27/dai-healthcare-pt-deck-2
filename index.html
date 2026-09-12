@@ -28,7 +28,7 @@
     font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
     -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     font-feature-settings:"tnum" 1,"ss01" 1;
-    word-break:keep-all; overflow-wrap:break-word; }
+    word-break:keep-all; overflow-wrap:break-word; overflow-x:hidden; }
 
   .deck{ display:flex; flex-direction:column; align-items:center; gap:30px; padding:34px 0 60px; }
   .stage{ width:calc(1600px * var(--s)); height:calc(900px * var(--s)); }
@@ -810,10 +810,16 @@
       return;
     }
     function fit(){
-      var s = Math.min(1, (window.innerWidth - 48) / 1600);
+      var vw = document.documentElement.clientWidth || window.innerWidth;
+      var s = Math.max(0.05, Math.min(1, (vw - 48) / 1600));
       document.documentElement.style.setProperty('--s', s.toFixed(4));
     }
     window.addEventListener('resize', fit);
+    window.addEventListener('orientationchange', fit);
+    window.addEventListener('load', fit);
+    if(document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', fit);
+    }
     fit();
   })();
 </script>
