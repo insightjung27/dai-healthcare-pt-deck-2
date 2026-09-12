@@ -165,6 +165,9 @@
   .aux .at{ font-size:18px; line-height:1.5; color:var(--ink2); font-weight:500; }
   .aux .at b{ color:var(--ink); font-weight:800; }
   .aux .lbl{ display:block; font-size:14px; font-weight:800; letter-spacing:.03em; color:var(--muted); margin-bottom:4px; }
+  /* S4(THK) left column impact headline — scoped, does not affect S3 */
+  .s-thk .big-metric .num{ font-size:128px; }
+  .s-thk .big-metric .num .pre{ font-size:.34em; font-weight:800; color:var(--muted); letter-spacing:0; margin-right:.06em; }
 
   /* ===== S5 EMR ===== */
   .emr-flow{ display:flex; align-items:center; gap:0; margin-bottom:6px; }
@@ -500,7 +503,7 @@
 </section></div>
 
 <!-- ============ 04 THK ============ -->
-<div class="stage"><section class="slide">
+<div class="stage"><section class="slide s-thk">
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">사례 02 · THK</div>
@@ -510,7 +513,12 @@
   <div class="slide-content">
     <div class="case-split">
       <div class="case-left">
-        <div class="qpe" style="margin-top:0">
+        <div class="big-metric">
+          <div class="num accent-num"><span class="pre">약</span>3<span class="u">배</span></div>
+          <div class="tag">단축</div>
+        </div>
+        <div class="metric-cap"><b>일일 처리업무 시간</b> 기준</div>
+        <div class="qpe">
           <div class="row"><div class="lb">개선 전</div><div class="tx">재고 미보유 주문의 <b>수기 확인</b>·제조사 개별 연락, 진행·예외 확인에 업무 집중</div></div>
           <div class="row"><div class="lb">본인 변경</div><div class="tx"><b>주문 상태·처리 흐름</b>을 정리하고, 담당 업무·예외 처리를 <b>관리자 시스템</b>에 반영</div></div>
           <div class="row"><div class="lb">적용</div><div class="tx">제조사별 <b>운영 여건에 맞춰</b> 적용</div></div>
