@@ -253,6 +253,8 @@
   .vcat span{ display:block; font-size:14.5px; font-weight:600; color:var(--muted); margin-top:5px; }
   .cmp-ft{ flex:0 0 auto; margin-top:auto; padding:15px 30px; border-top:1px dashed var(--hair);
     font-size:16px; font-weight:800; color:var(--slate); letter-spacing:.01em; }
+  /* scope-note/타이틀 ↔ 카드 간격 확보(2p·5p 수준). margin이 flex 카드 높이를 그만큼 흡수 → 카드 축소 방향 */
+  .s-good .cmp, .s-thk .cmp{ margin-top:24px; }
 
   /* ===== S5 EMR ===== */
   .emr-flow{ display:flex; align-items:center; gap:0; margin-bottom:6px; }
@@ -364,13 +366,13 @@
   .stage-c .res{ margin-top:auto; padding-top:16px; border-top:1px solid var(--hair);
     font-size:19px; line-height:1.4; font-weight:800; color:var(--accent-deep); }
   .stage-c .res .rk{ display:block; font-size:13.5px; font-weight:800; letter-spacing:.06em; color:var(--muted); margin-bottom:6px; }
-  .loopback{ margin-top:36px; padding-top:20px; border-top:2px dashed var(--accent);
-    display:flex; align-items:center; justify-content:center; gap:12px;
-    font-size:18px; font-weight:800; color:var(--accent-deep); }
-  .loopback svg{ color:var(--accent); }
   .stage-bottom{ margin-top:44px; background:var(--navy); border-radius:10px;
     padding:26px 30px; font-size:22px; line-height:1.5; color:#fff; letter-spacing:-.01em; }
   .stage-bottom b{ color:#5fd0ee; font-weight:800; }
+  /* 8p loopback 제거 후 세로 균형 재조정 — 타임라인↔배너↔각주 균등 여백(scope 한정) */
+  .s-stage .slide-content{ justify-content:space-evenly; }
+  .s-stage .s8-track{ margin-top:0; }
+  .s-stage .stage-bottom{ margin-top:0; }
 
   /* ===== S9 execution hypotheses (신설) ===== */
   .hyps{ display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:stretch; flex:1 1 auto; }
@@ -394,6 +396,7 @@
   .hyp-safe{ margin-top:24px; border-left:5px solid var(--faint); background:var(--wash); border-radius:6px;
     padding:16px 26px; font-size:18px; line-height:1.45; color:var(--ink2); font-weight:500; }
   .hyp-safe b{ color:var(--ink); font-weight:800; }
+  .s-hyp .hyps{ margin-top:22px; }  /* 타이틀 ↔ 가설 카드 간격 확보(2p·5p 수준) */
 
   /* ===== closing ===== */
   .close-main{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
@@ -559,7 +562,6 @@
       <div class="cmp-panel cmp-right">
         <div class="cmp-hd">
           <div class="t">신청 과정 : 개선 전 → 개선 후</div>
-          <div class="s">개념도 · 실제 화면 아님</div>
         </div>
         <div class="cmp-flow flow-steps">
           <div class="cmp-stage before">
@@ -691,7 +693,6 @@
         <div class="pk">제안 · 검토 (수행 아님)</div>
         <div class="pi">반복 기능의 <b style="color:var(--ink)">공통화</b></div>
         <div class="pi">병원 공통 <b style="color:var(--ink)">통합 플랫폼 방향</b></div>
-        <div class="pi note">완성한 성과가 아니라, 검토·제안 단계</div>
       </div>
     </div>
     <div class="emr-bottom">
@@ -795,7 +796,7 @@
 </section></div>
 
 <!-- ============ 08 DAI 단계별 접근 ============ -->
-<div class="stage"><section class="slide">
+<div class="stage"><section class="slide s-stage">
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">DAI 기여 · 판단 방식</div>
@@ -832,10 +833,6 @@
         </div>
       </div>
     </div>
-    <div class="loopback">
-      <svg width="32" height="18" viewBox="0 0 32 18" fill="none"><path d="M30 9H6M12 3L6 9l6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      검증 결과에 따라 앞 단계로 되돌아갈 수 있고, 이미 검증된 부분은 이어받습니다
-    </div>
     </div>
     <div class="stage-bottom">경영진에게는 <b>선택의 근거와 추천안</b>을, 실행 조직에는 <b>명확한 범위와 판단 기준</b>을 제시하겠습니다.</div>
   </div>
@@ -845,7 +842,7 @@
 </section></div>
 
 <!-- ============ 09 구체적 실행 가설 (신설) ============ -->
-<div class="stage"><section class="slide">
+<div class="stage"><section class="slide s-hyp">
   <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
     <div class="eyebrow">DAI 기여 · 첫 검증 가설</div>
