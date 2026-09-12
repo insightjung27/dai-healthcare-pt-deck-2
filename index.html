@@ -210,7 +210,7 @@
   .cmp-lever em{ font-style:normal; color:var(--accent-deep); }
   .cmp-chip{ display:inline-block; margin-top:20px; font-size:17px; font-weight:800; color:#fff;
     background:var(--accent-deep); border-radius:999px; padding:9px 20px; letter-spacing:.01em; }
-  /* 우측 흐름(3p) — before/after 한 덩어리, '반복 확인 제거'를 시각으로 */
+  /* 우측 흐름(3p) — before/after 한 덩어리, '리포트→상담 안내 강화'를 시각으로 */
   .flow-steps{ padding:22px 30px; gap:0; }
   .cmp-stage{ flex:1 1 0; border-radius:12px; padding:18px 24px; display:flex; flex-direction:column;
     justify-content:center; min-height:0; }
@@ -223,14 +223,12 @@
     padding:11px 0; font-size:17px; font-weight:800; color:var(--accent-deep); letter-spacing:.01em; }
   .cmp-trans .ar{ display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px;
     border-radius:50%; background:var(--accent); color:#fff; font-size:18px; font-weight:800; box-shadow:0 4px 12px rgba(19,145,184,.3); }
-  /* 3p 신청 여정 그리드 — 개선 전/후 세로 열 정렬로 '반복 확인 제거' 대비 */
+  /* 3p 신청 여정 그리드 — 개선 전/후 세로 열 정렬로 '상담 안내 강화' 지점 대비 */
   .jrow{ display:grid; grid-template-columns:1fr 36px 1fr 36px 1fr 36px 1fr; align-items:center; }
-  .jn{ align-self:center; border-radius:10px; padding:14px 8px; text-align:center; font-size:15.5px;
-    font-weight:700; line-height:1.24; letter-spacing:-.005em; }
+  .jn{ align-self:center; border-radius:10px; padding:14px 8px; text-align:center; font-size:15px;
+    font-weight:700; line-height:1.24; letter-spacing:-.01em; }
   .jn.start{ background:#fff; border:1.5px solid var(--hair); color:var(--ink); }
-  .jn.prob{ background:#fdeef0; border:1.5px solid #f0bcc4; color:#b23a4a; position:relative; }
-  .jn.prob .rmtag{ position:absolute; top:-12px; left:50%; transform:translateX(-50%); font-size:10.5px;
-    font-weight:800; color:#fff; background:#c0405a; border-radius:5px; padding:2px 9px; white-space:nowrap; letter-spacing:.02em; }
+  .jn.prob{ background:#fdeef0; border:1.5px solid #f0bcc4; color:#b23a4a; }
   .jn.exit{ background:#fff; border:1.5px dashed #cbb0b6; color:var(--muted); }
   .jn.sol{ background:#e7f4f9; border:1.5px solid #a0d4e4; color:var(--accent-deep); }
   .jn.done{ background:var(--accent-deep); border:1.5px solid var(--accent-deep); color:#fff; }
@@ -548,12 +546,12 @@
       <div class="cmp-panel cmp-left">
         <div class="cmp-kpi-wrap">
           <div class="cmp-lever-lbl">핵심 레버</div>
-          <div class="cmp-lever">반복 확인 단계 <em>제거</em></div>
+          <div class="cmp-lever">리포트 → 상담 <em>연결 강화</em></div>
           <div class="cmp-chip">상담신청 전환율 20% 개선</div>
         </div>
         <div class="cmp-rows">
-          <div class="cmp-row"><div class="rl">문제</div><div class="rt">상담신청 과정의 <b>반복 확인 단계</b>가 고객 부담·이탈 요인</div></div>
-          <div class="cmp-row"><div class="rl">실행</div><div class="rt">반복 부담을 확인하고, 확인 단계와 <b>신청 흐름</b>을 개선</div></div>
+          <div class="cmp-row"><div class="rl">문제</div><div class="rt">분석 결과 리포트에서 상담 신청으로의 <b>유도·안내가 약해</b> 고객 이탈</div></div>
+          <div class="cmp-row"><div class="rl">실행</div><div class="rt">리포트에서 상담 신청 <b>안내·연결을 강화</b>(동의 흐름 정리)</div></div>
           <div class="cmp-row"><div class="rl">결과</div><div class="rt">수정 반영 후 전환율 <b>기존 대비 20% 개선</b></div></div>
           <div class="cmp-row"><div class="rl">함께 확인</div><div class="rt">설계사 클레임 비율도 함께 점검해 상담 정보 품질 확인</div></div>
         </div>
@@ -565,26 +563,28 @@
         </div>
         <div class="cmp-flow flow-steps">
           <div class="cmp-stage before">
-            <div class="cmp-slb before">개선 전 · 반복 확인 2단계</div>
+            <div class="cmp-slb before">개선 전 · 상담 안내 약함</div>
             <div class="jrow">
               <div class="jn start">분석 요청</div>
               <div class="jar"></div>
-              <div class="jn prob"><span class="rmtag">제거</span>반복 확인</div>
+              <div class="jn start">분석 결과 리포트</div>
               <div class="jar"></div>
-              <div class="jn prob"><span class="rmtag">제거</span>반복 확인</div>
+              <div class="jn prob">상담 안내 약함</div>
               <div class="jar"></div>
-              <div class="jn exit">이탈률 높음</div>
+              <div class="jn exit">이탈</div>
             </div>
           </div>
-          <div class="cmp-trans"><span class="ar">↓</span> 반복 확인 단계 제거</div>
+          <div class="cmp-trans"><span class="ar">↓</span> 리포트 → 상담 안내 강화</div>
           <div class="cmp-stage after">
-            <div class="cmp-slb after">개선 후 · 한 단계로 간소화</div>
+            <div class="cmp-slb after">개선 후 · 상담 안내 강화</div>
             <div class="jrow">
-              <div class="jn start" style="grid-column:1/2">분석 요청</div>
-              <div class="jar" style="grid-column:2/3"></div>
-              <div class="jn sol" style="grid-column:3/6">확인 단계 간소화</div>
-              <div class="jar" style="grid-column:6/7"></div>
-              <div class="jn done" style="grid-column:7/8">상담신청 완료<span class="chk">✓</span></div>
+              <div class="jn start">분석 요청</div>
+              <div class="jar"></div>
+              <div class="jn start">분석 결과 리포트</div>
+              <div class="jar"></div>
+              <div class="jn sol">상담 안내 강화</div>
+              <div class="jar"></div>
+              <div class="jn done">상담 신청 완료<span class="chk">✓</span></div>
             </div>
           </div>
         </div>
