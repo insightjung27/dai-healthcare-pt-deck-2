@@ -807,20 +807,22 @@
 
 <script>
   (function(){
+    function fit(){
+      var vw = document.documentElement.clientWidth || window.innerWidth;
+      var s = Math.max(0.05, Math.min(1, (vw - 48) / 1600));
+      document.documentElement.style.setProperty('--s', s.toFixed(4));
+    }
     var only = new URLSearchParams(location.search).get('only');
     if(only){
-      document.documentElement.style.setProperty('--s','1');
+      fit();
+      window.addEventListener('resize', fit);
+      window.addEventListener('orientationchange', fit);
       var deck=document.querySelector('.deck');
       deck.style.padding='0'; deck.style.gap='0';
       var stages=document.querySelectorAll('.stage');
       stages.forEach(function(st,i){ st.style.display=(i===(+only-1))?'block':'none'; });
       document.querySelectorAll('.slide').forEach(function(s){ s.style.boxShadow='none'; });
       return;
-    }
-    function fit(){
-      var vw = document.documentElement.clientWidth || window.innerWidth;
-      var s = Math.max(0.05, Math.min(1, (vw - 48) / 1600));
-      document.documentElement.style.setProperty('--s', s.toFixed(4));
     }
     window.addEventListener('resize', fit);
     window.addEventListener('orientationchange', fit);
