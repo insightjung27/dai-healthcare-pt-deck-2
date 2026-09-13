@@ -12,17 +12,17 @@
     --ivory:#fbfaf6;
     --ink:#171a2e;
     --ink2:#3a3f57;
-    --muted:#6f7590;      /* caption — 살짝 더 진하게(원거리 가독) */
-    --faint:#9298b0;
+    --muted:#6f7590;
+    --faint:#9aa0b6;
     --hair:#e5e8f0;
-    --hair2:#eef1f6;
-    --wash:#f5f7fb;
+    --wash:#f4f7fb;
     --accent:#1391b8;
     --accent-deep:#0c6d8c;
+    --sky:#5fd0ee;
     --navy:#141a33;
     --navy2:#1d2547;
-    --slate:#5c6478;      /* 크롬(라벨·화살표) 중립 강등색 */
-    --slate2:#94a3b8;     /* 크롬 연회색(선·아이콘) */
+    --slate:#5c6478;
+    --gray:#aeb5c6;      /* 흩어진/미연결 노드 */
     --s:1;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
@@ -39,254 +39,216 @@
   .slide{
     position:relative; width:1600px; height:900px; background:var(--ivory);
     display:flex; flex-direction:column;
-    padding:62px 88px 50px 88px;
+    padding:60px 100px 46px 100px;
     overflow:hidden;
     box-shadow:0 18px 60px rgba(20,26,51,.14);
   }
+
+  /* header / footer */
   .slide-header{ flex:0 0 auto; }
-  .eyebrow{ font-size:17px; font-weight:800; letter-spacing:.18em; color:var(--slate);
-    text-transform:uppercase; display:inline-block; padding-bottom:9px;
-    border-bottom:2px solid #cbd2de; }
-  h1{ font-size:50px; line-height:1.22; font-weight:800; color:var(--ink);
-    letter-spacing:-.018em; margin-top:20px; max-width:1420px; }
-  h1 .lite{ font-weight:400; color:var(--ink2); }
+  .eyebrow{ font-size:16px; font-weight:800; letter-spacing:.24em; color:var(--slate);
+    text-transform:uppercase; display:inline-block; padding-bottom:10px; border-bottom:2px solid #cbd2de; }
+  h1{ font-size:54px; line-height:1.24; font-weight:800; color:var(--ink);
+    letter-spacing:-.02em; margin-top:22px; max-width:1400px; }
   h1 .em{ color:var(--accent-deep); }
-  .scope-note{ margin-top:16px; font-size:20px; font-weight:600; color:var(--muted);
-    letter-spacing:-.01em; display:inline-flex; align-items:center; gap:10px; }
-  .scope-note::before{ content:""; width:22px; height:2px; background:#c3c9d6; display:inline-block; }
+  h1 .lite{ font-weight:500; color:var(--ink2); }
+  h1 .gacheong{ font-size:.42em; font-weight:800; color:var(--muted); letter-spacing:0; margin-left:14px;
+    vertical-align:.28em; background:var(--wash); border:1.5px solid var(--hair); border-radius:6px; padding:4px 12px; }
   .slide-content{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; min-height:0; }
   .slide-footer{ flex:0 0 auto; display:flex; align-items:flex-end; justify-content:space-between;
-    font-size:17px; color:var(--muted); letter-spacing:.005em; padding-top:10px; }
-  .slide-footer .source{ max-width:1200px; line-height:1.45; font-weight:600; color:var(--ink2); }
-  .page-number{ font-weight:800; color:var(--muted); letter-spacing:.12em; white-space:nowrap; font-size:14.5px; }
-  .wm{ position:absolute; right:88px; top:66px; font-size:14.5px; font-weight:700; letter-spacing:.12em;
-    color:var(--faint); }
+    padding-top:10px; }
+  .brandmark{ font-size:14px; font-weight:500; color:var(--faint); letter-spacing:.03em; }
+  .page-number{ font-size:14px; font-weight:800; color:var(--muted); letter-spacing:.14em; white-space:nowrap; }
 
-  .num{ font-weight:800; letter-spacing:-.03em; line-height:.9; color:var(--ink);
-    font-feature-settings:"tnum" 1; }
-  .num .u{ font-size:.42em; font-weight:700; color:var(--muted); letter-spacing:0; }
-  .accent-num{ color:var(--accent-deep); }
+  /* generic bottom line / note / source */
+  .lead{ margin-top:6px; font-size:24px; font-weight:500; color:var(--ink2); line-height:1.5; letter-spacing:-.01em; }
+  .lead b{ font-weight:800; color:var(--ink); }
+  .lead .em{ font-weight:800; color:var(--accent-deep); }
+  .note{ margin-top:12px; font-size:18px; font-weight:500; color:var(--muted); line-height:1.5; }
+  .src{ margin-top:12px; font-size:11.5px; font-weight:500; color:var(--faint); line-height:1.55; }
 
-  /* ===== COVER / CLOSING ===== */
-  .slide-cover, .slide-closing{ background:var(--navy); color:#fff; padding:80px 92px 58px; }
-  .slide-cover .eyebrow, .slide-closing .eyebrow{ color:#98a2c4; border-color:rgba(255,255,255,.18); }
-  .cover-brand{ display:flex; align-items:center; gap:14px; font-size:16px; font-weight:600;
-    letter-spacing:.02em; color:#b3bcda; }
-  .cover-brand .dot{ width:9px; height:9px; border-radius:50%; background:#5fd0ee; }
-  .cover-main{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
-  .cover-main h1{ color:#fff; font-size:70px; line-height:1.16; letter-spacing:-.028em; max-width:1360px; }
-  .cover-main h1 .em{ color:#5fd0ee; }
-  .cover-sub{ margin-top:30px; font-size:28px; font-weight:500; color:#ccd3e7; letter-spacing:-.01em; }
-  .cover-name{ margin-top:40px; padding-top:28px; border-top:1px solid rgba(255,255,255,.18);
-    display:flex; align-items:baseline; gap:18px; }
-  .cover-name .nm{ font-size:30px; font-weight:800; color:#fff; letter-spacing:.02em; }
-  .cover-name .dt{ font-size:22px; color:#a3adce; letter-spacing:.03em; }
-  .cover-intro{ margin-top:22px; font-size:22px; color:#93a0c4; letter-spacing:-.005em; }
+  /* icons */
+  .ic{ display:inline-flex; align-items:center; justify-content:center; }
+  .ic svg{ display:block; }
+
+  /* ===== COVER / CLOSING (navy) ===== */
+  .slide-cover, .slide-closing{ background:var(--navy); color:#fff; padding:80px 100px 56px; }
+  .slide-cover .eyebrow, .slide-closing .eyebrow{ color:#9aa6cb; border-color:rgba(255,255,255,.2); }
+  .cover-brand{ display:flex; align-items:center; gap:13px; font-size:16px; font-weight:500;
+    letter-spacing:.02em; color:#b3bcda; position:relative; z-index:2; }
+  .cover-brand .dot{ width:9px; height:9px; border-radius:50%; background:var(--sky); }
+  .cover-main{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:2; }
+  .cover-main h1{ color:#fff; font-size:72px; line-height:1.16; letter-spacing:-.028em; max-width:1180px; }
+  .cover-main h1 .em{ color:var(--sky); }
+  .cover-sub{ margin-top:30px; font-size:27px; font-weight:500; color:#ccd3e7; letter-spacing:-.01em; }
+  .cover-name{ margin-top:44px; padding-top:26px; border-top:1px solid rgba(255,255,255,.18);
+    display:flex; align-items:baseline; gap:16px; }
+  .cover-name .nm{ font-size:29px; font-weight:800; color:#fff; letter-spacing:.02em; }
+  .cover-name .dt{ font-size:21px; font-weight:500; color:#a3adce; letter-spacing:.03em; }
   .cover-foot{ display:flex; justify-content:space-between; align-items:flex-end;
-    font-size:15px; color:#828cae; letter-spacing:.02em; }
+    font-size:14px; font-weight:500; color:#828cae; letter-spacing:.02em; position:relative; z-index:2; }
+  /* subtle loop graphic behind cover title */
+  .cover-loop{ position:absolute; right:76px; top:50%; transform:translateY(-50%);
+    width:560px; height:560px; z-index:1; opacity:.5; pointer-events:none; }
 
-  /* ===== S3 capability map ===== */
-  .cap-map{ width:100%; }
-  .cap-head, .cap-row{ display:grid; grid-template-columns:2.3fr 2.7fr 0.5fr 2.7fr 1.7fr; gap:18px; align-items:center; }
-  .cap-head{ padding:0 6px 16px; border-bottom:2.5px solid var(--ink); }
-  .cap-head .ch{ font-size:19px; font-weight:800; letter-spacing:.02em; color:#334155; }
-  .cap-row{ padding:22px 6px; border-bottom:1px solid var(--hair); min-width:0; }
-  .cap-row .dom{ font-size:24px; font-weight:800; color:var(--ink); min-width:0; }
-  .cap-row .dom span{ display:block; font-size:16.5px; font-weight:600; color:#5b6478; margin-top:5px; letter-spacing:.01em; }
-  .cap-row .cell{ font-size:19.5px; line-height:1.4; color:var(--ink2); min-width:0; font-weight:500; }
-  .cap-row .cell .k{ display:block; font-size:14.5px; font-weight:800; letter-spacing:.04em; color:var(--slate); margin-bottom:5px; }
-  .cap-row .uo-arrow{ text-align:center; color:#b7bdcb; font-size:22px; font-weight:600; line-height:1; }
-  .cap-row .proof{ justify-self:start; font-size:19px; font-weight:800; letter-spacing:.01em;
-    color:#334155; background:#eef1f6; border:none; border-radius:999px; padding:10px 22px; white-space:nowrap;
-    box-shadow:none; }
-  .content-caption{ margin-top:28px; padding:26px 30px; background:var(--navy); border-radius:10px;
-    font-size:25px; color:#fff; letter-spacing:-.012em; display:flex; align-items:center; gap:16px; }
-  .content-caption .lead{ flex:0 0 auto; font-size:15px; font-weight:800; letter-spacing:.08em; color:#5fd0ee; }
-  .content-caption b{ color:#fff; font-weight:800; }
-  .content-caption .em{ color:#5fd0ee; font-weight:800; }
+  /* ===== S2 Bridge ===== */
+  .bridge-wrap{ display:flex; flex-direction:column; gap:44px; align-items:center; }
+  .bridge{ display:flex; align-items:center; justify-content:center; gap:0; width:100%; }
+  .bnode{ flex:0 0 auto; width:330px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .bnode .ring{ width:112px; height:112px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    border:2.5px solid var(--hair); background:var(--paper); color:var(--slate); }
+  .bnode .bt{ font-size:30px; font-weight:800; color:var(--ink); letter-spacing:-.01em; }
+  .bnode .bd{ font-size:19px; font-weight:500; color:var(--muted); line-height:1.4; }
+  .bnode.hub .ring{ width:132px; height:132px; border:none; background:var(--navy); color:var(--sky); box-shadow:0 12px 34px rgba(20,26,51,.24); }
+  .bnode.hub .bt{ font-size:34px; color:var(--accent-deep); }
+  .barrow{ flex:1 1 auto; height:4px; background:linear-gradient(90deg,#cbd6df,var(--accent)); position:relative; margin:0 -6px 46px; max-width:150px; }
+  .barrow::after{ content:""; position:absolute; right:-2px; top:-8px; border-left:18px solid var(--accent);
+    border-top:10px solid transparent; border-bottom:10px solid transparent; }
+  .caps{ display:flex; align-items:flex-start; justify-content:center; gap:70px; width:100%; padding-top:30px; border-top:1.5px solid var(--hair); }
+  .cap{ text-align:center; display:flex; flex-direction:column; gap:7px; }
+  .cap .cv{ font-size:30px; font-weight:800; color:var(--accent-deep); letter-spacing:-.01em; }
+  .cap .cc{ font-size:18px; font-weight:500; color:var(--muted); }
 
-  /* ===== S2 Executive Summary (신규) ===== */
-  .exec-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; flex:1 1 auto; align-items:stretch; }
-  .exec-card{ border:1.5px solid var(--hair); border-radius:14px; background:var(--paper);
-    box-shadow:0 4px 16px rgba(20,26,51,.05); padding:36px 34px; display:flex; flex-direction:column; }
-  .exec-card.mid{ border-color:var(--accent); box-shadow:0 8px 26px rgba(19,145,184,.12); }
-  .exec-card .en{ font-size:15px; font-weight:800; letter-spacing:.1em; color:var(--slate); }
-  .exec-card .et{ margin-top:12px; font-size:28px; font-weight:800; color:var(--ink); letter-spacing:-.015em;
-    padding-bottom:20px; border-bottom:2.5px solid var(--hair); }
-  .exec-card.mid .et{ color:var(--accent-deep); }
-  .exec-card .eb{ margin-top:22px; font-size:22px; line-height:1.55; color:var(--ink2); font-weight:500; }
-  .exec-card .eb b{ color:var(--ink); font-weight:800; }
-  .exec-flow{ margin-top:20px; display:flex; flex-direction:column; gap:16px; }
-  .exec-flow .ef{ font-size:24px; font-weight:800; color:var(--ink); letter-spacing:-.01em; }
-  .exec-flow .ar{ color:var(--accent); font-size:20px; font-weight:800; line-height:1; }
-  .exec-sub{ margin-top:16px; text-align:center; font-size:18px; font-weight:600; color:var(--muted); letter-spacing:-.005em; }
+  /* ===== S3 Proof (metric impact) ===== */
+  .proof{ display:grid; grid-template-columns:1fr 1px 1fr; gap:56px; align-items:center; flex:1 1 auto; }
+  .vdiv{ width:1px; height:78%; background:var(--hair); align-self:center; }
+  .metric{ display:flex; flex-direction:column; align-items:flex-start; }
+  .metric .mco{ font-size:16px; font-weight:800; letter-spacing:.18em; color:var(--slate); text-transform:uppercase; }
+  .metric .mnum{ font-size:150px; font-weight:800; line-height:.86; letter-spacing:-.04em; color:var(--accent-deep);
+    font-feature-settings:"tnum" 1; margin-top:8px; }
+  .metric .mnum .sg{ font-size:.5em; vertical-align:.12em; margin-right:.02em; }
+  .metric .mnum .u{ font-size:.44em; font-weight:800; }
+  .metric .mlabel{ margin-top:6px; font-size:23px; font-weight:800; color:var(--ink); }
+  .metric .mviz{ margin-top:26px; width:100%; }
+  .metric .mline{ margin-top:22px; font-size:20px; font-weight:500; color:var(--ink2); line-height:1.45; }
+  .metric .msub{ margin-top:10px; font-size:16px; font-weight:500; color:var(--muted); }
+  /* funnel before/after */
+  .fun{ display:flex; align-items:flex-end; gap:20px; }
+  .fun .fb{ flex:1; display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .fun .bar{ width:100%; border-radius:8px 8px 0 0; }
+  .fun .fb.b1 .bar{ height:56px; background:var(--gray); }
+  .fun .fb.b2 .bar{ height:104px; background:linear-gradient(180deg,var(--accent),var(--accent-deep)); }
+  .fun .fl{ font-size:16px; font-weight:500; color:var(--muted); text-align:center; line-height:1.3; }
+  .fun .fup{ align-self:center; margin-bottom:24px; color:var(--accent); font-size:30px; font-weight:800; }
+  /* time bars */
+  .tbars{ display:flex; flex-direction:column; gap:16px; }
+  .tbar{ display:flex; align-items:center; gap:16px; }
+  .tbar .tl{ width:74px; font-size:18px; font-weight:800; color:var(--ink); flex:0 0 auto; }
+  .tbar .tt{ height:38px; border-radius:7px; display:flex; align-items:center; justify-content:flex-end; padding-right:14px;
+    color:#fff; font-size:16px; font-weight:800; }
+  .tbar.b1 .tt{ width:100%; background:var(--gray); }
+  .tbar.b2 .tt{ width:33.3%; background:linear-gradient(90deg,var(--accent),var(--accent-deep)); }
+  .evi-row{ flex:0 0 auto; display:flex; justify-content:center; gap:54px; margin-top:10px; }
+  .evi{ display:flex; align-items:center; gap:11px; font-size:18px; font-weight:500; color:var(--slate); }
+  .evi .d{ width:7px; height:7px; border-radius:50%; background:var(--accent); flex:0 0 auto; }
 
-  /* ===== S4 metric cards (굿리치+THK 병합·신규) ===== */
-  .mcards{ display:grid; grid-template-columns:1fr 1fr; gap:44px; flex:1 1 auto; align-items:stretch; }
-  .mcard{ border:1.5px solid var(--hair); border-radius:14px; background:var(--paper);
-    box-shadow:0 4px 16px rgba(20,26,51,.05); padding:32px 38px 28px; display:flex; flex-direction:column; }
-  .mcard .mh{ font-size:19px; font-weight:800; letter-spacing:.01em; color:var(--slate); }
-  .mcard .mhero{ margin-top:14px; display:flex; align-items:flex-end; gap:18px; padding-bottom:22px; border-bottom:1.5px solid var(--hair); }
-  .mcard .mhero .n{ font-size:104px; font-weight:800; line-height:.8; letter-spacing:-.03em; color:var(--accent-deep);
-    font-feature-settings:"tnum" 1; }
-  .mcard .mhero .n .pre{ display:block; font-size:.24em; font-weight:800; color:var(--slate); letter-spacing:.01em; margin-bottom:.35em; }
-  .mcard .mhero .n .u{ font-size:.42em; font-weight:700; }
-  .mcard .mhero .tag{ margin-bottom:20px; font-size:19px; font-weight:800; letter-spacing:.02em;
-    color:var(--accent-deep); background:#e7f4f9; border:1.5px solid #c3e2ee; border-radius:8px; padding:9px 16px; }
-  .mcard .msub{ margin-top:14px; font-size:20px; font-weight:700; color:var(--ink); line-height:1.4; }
-  .mcard .msub b{ color:var(--accent-deep); font-weight:800; }
-  .mcard .mrows{ flex:1 1 auto; display:flex; flex-direction:column; margin-top:4px; }
-  .mcard .mrow{ flex:1 1 0; display:grid; grid-template-columns:78px 1fr; gap:16px; align-items:center; border-top:1px solid var(--hair2); min-height:0; }
-  .mcard .mrow:first-child{ border-top:none; }
-  .mcard .mrow .rl{ font-size:16px; font-weight:800; letter-spacing:.02em; color:var(--slate); }
-  .mcard .mrow .rt{ font-size:19px; line-height:1.4; color:var(--ink2); font-weight:500; }
-  .mcard .mrow .rt b{ color:var(--ink); font-weight:800; }
-  .mcard .mguard{ flex:0 0 auto; margin-top:14px; background:var(--wash); border-left:4px solid var(--slate2);
-    border-radius:0 8px 8px 0; padding:13px 20px; font-size:16px; line-height:1.45; color:var(--ink2); font-weight:500; }
-  .mcard .mguard .k{ font-weight:800; color:var(--slate); }
+  /* ===== S4 Transformation flow ===== */
+  .xform{ display:flex; align-items:center; justify-content:center; gap:0; flex:1 1 auto; }
+  .xzone{ display:flex; flex-direction:column; align-items:center; gap:20px; }
+  .xzone .zlabel{ font-size:17px; font-weight:800; letter-spacing:.08em; color:var(--slate); text-transform:uppercase; }
+  .xzone.mid .zlabel{ color:var(--accent-deep); }
+  .xzone.right .zlabel{ color:var(--accent-deep); }
+  /* left scattered nodes */
+  .scatter{ position:relative; width:280px; height:300px; }
+  .snode{ position:absolute; width:112px; height:52px; border-radius:26px; border:1.8px dashed var(--gray);
+    background:var(--paper); color:var(--slate); display:flex; align-items:center; justify-content:center;
+    font-size:19px; font-weight:800; }
+  /* center hub */
+  .hub{ position:relative; width:300px; height:300px; display:flex; align-items:center; justify-content:center; }
+  .hub .core{ width:168px; height:168px; border-radius:50%; background:var(--navy); color:#fff;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 14px 40px rgba(20,26,51,.28); }
+  .hub .core .ct{ font-size:30px; font-weight:800; color:var(--sky); letter-spacing:.02em; }
+  .hub .core .cs{ font-size:16px; font-weight:500; color:#c7d0e6; margin-top:4px; }
+  .hub .kw{ position:absolute; font-size:16px; font-weight:800; color:var(--ink2);
+    background:var(--wash); border:1.5px solid var(--hair); border-radius:999px; padding:6px 15px; }
+  /* right loop (sky) */
+  .miniloop{ position:relative; width:300px; height:300px; }
+  .miniloop .ml-node{ position:absolute; transform:translate(-50%,-50%); width:96px; height:96px; border-radius:50%;
+    background:#e9f7fb; border:2px solid var(--sky); color:var(--accent-deep);
+    display:flex; align-items:center; justify-content:center; text-align:center; font-size:16px; font-weight:800; line-height:1.2; }
+  .xarrow{ flex:0 0 auto; width:96px; height:5px; background:var(--ink2); position:relative; margin:0 22px; align-self:center; margin-top:24px; }
+  .xarrow::after{ content:""; position:absolute; right:-2px; top:-9px; border-left:20px solid var(--ink2);
+    border-top:11px solid transparent; border-bottom:11px solid transparent; }
 
-  /* ===== S5 dual (연동+조직 병합·신규) ===== */
-  .dual{ display:grid; grid-template-columns:1fr 1fr; gap:36px; flex:1 1 auto; align-items:stretch; }
-  .dual-col{ border:1.5px solid var(--hair); border-radius:14px; background:var(--paper);
-    box-shadow:0 4px 16px rgba(20,26,51,.05); padding:26px 32px 22px; display:flex; flex-direction:column; }
-  .dual-col .dh{ font-size:22px; font-weight:800; color:var(--ink); padding-bottom:15px; border-bottom:2.5px solid var(--hair); }
-  .dual-col .dh span{ display:block; font-size:15px; font-weight:700; color:var(--accent-deep); margin-top:6px; letter-spacing:.02em; }
-  .dflow{ display:flex; align-items:center; gap:8px; margin:20px 0 4px; }
-  .dflow .dn{ flex:0 0 auto; font-size:16.5px; font-weight:800; color:var(--ink); background:var(--wash); border:1.5px solid var(--hair);
-    border-radius:8px; padding:11px 16px; }
-  .dflow .dar{ flex:1 1 auto; height:2.5px; background:#cbd2de; position:relative; min-width:12px; }
-  .dflow .dar::after{ content:""; position:absolute; right:-1px; top:-4px; border-left:9px solid #cbd2de;
-    border-top:5px solid transparent; border-bottom:5px solid transparent; }
-  .dual-col ul{ list-style:none; margin-top:12px; flex:1 1 auto; }
-  .dual-col li{ position:relative; padding:12px 0 12px 24px; font-size:18.5px; line-height:1.4; color:var(--ink2); font-weight:500; border-bottom:1px solid var(--hair2); }
-  .dual-col li:last-child{ border-bottom:none; }
-  .dual-col li::before{ content:""; position:absolute; left:0; top:20px; width:9px; height:9px; background:var(--accent); border-radius:50%; }
-  .dual-col li b{ color:var(--ink); font-weight:800; }
-  .dual-tags{ flex:0 0 auto; margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; }
-  .dual-tags .tg{ font-size:14.5px; font-weight:800; color:var(--slate); background:var(--wash); border:1px solid var(--hair);
-    border-radius:999px; padding:7px 15px; }
+  /* ===== S5 Care Loop ===== */
+  .care{ display:flex; align-items:center; justify-content:center; gap:60px; flex:1 1 auto; }
+  .care-side{ display:flex; flex-direction:column; gap:40px; width:230px; }
+  .care-side.left{ align-items:flex-end; text-align:right; }
+  .care-side.right{ align-items:flex-start; text-align:left; }
+  .found{ display:flex; flex-direction:column; gap:4px; }
+  .found .fk{ font-size:23px; font-weight:800; color:var(--ink); letter-spacing:-.01em; }
+  .found .fd{ font-size:16px; font-weight:500; color:var(--muted); }
+  .loop{ position:relative; width:460px; height:460px; flex:0 0 auto; }
+  .loop .ring-svg{ position:absolute; inset:0; }
+  .lnode{ position:absolute; transform:translate(-50%,-50%); width:132px; display:flex; flex-direction:column;
+    align-items:center; gap:7px; text-align:center; }
+  .lnode .lic{ width:58px; height:58px; border-radius:50%; background:var(--paper); border:2px solid var(--accent);
+    color:var(--accent-deep); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(19,145,184,.16); }
+  .lnode .lt{ font-size:18px; font-weight:800; color:var(--ink); line-height:1.25; }
+  .lnode .ln{ font-size:12px; font-weight:800; color:var(--accent); letter-spacing:.1em; }
+  .loop-core{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:190px; height:190px; border-radius:50%; background:var(--navy); color:#fff;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:0 14px 40px rgba(20,26,51,.28); }
+  .loop-core .lc1{ font-size:24px; font-weight:800; color:var(--sky); letter-spacing:-.01em; }
+  .loop-core .lcp{ font-size:20px; font-weight:800; color:#8b96b8; margin:3px 0; }
+  .loop-core .lc2{ font-size:24px; font-weight:800; color:#fff; letter-spacing:-.01em; }
+  .care-bottom{ flex:0 0 auto; margin-top:6px; text-align:center; }
+  .roles{ display:inline-flex; flex-wrap:wrap; justify-content:center; gap:8px 30px; font-size:18px; font-weight:500; color:var(--ink2); }
+  .roles b{ font-weight:800; color:var(--ink); }
+  .care-ai{ margin-top:12px; font-size:17px; font-weight:500; color:var(--muted); }
 
-  /* ===== S6 Why Now (신규) ===== */
-  .why{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px; flex:1 1 auto; }
-  .why-col{ display:flex; flex-direction:column; min-width:0; }
-  .why-col .wh{ display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px;
-    font-size:23px; font-weight:800; color:var(--ink); padding-bottom:14px; border-bottom:2.5px solid var(--ink); }
-  .why-col.hyp .wh{ border-bottom-color:var(--accent); }
-  .why-col .wh .lab{ font-size:12.5px; font-weight:800; letter-spacing:.01em; color:var(--accent-deep);
-    background:#e7f4f9; border:1px solid #bfe0ec; border-radius:999px; padding:5px 12px; white-space:nowrap; }
-  .why-col ul{ list-style:none; margin-top:4px; }
-  .why-col li{ position:relative; padding:14px 0 14px 24px; font-size:19px; line-height:1.42; color:var(--ink2); font-weight:500; border-bottom:1px solid var(--hair2); }
-  .why-col li::before{ content:""; position:absolute; left:0; top:21px; width:8px; height:8px; background:var(--slate2); border-radius:50%; }
-  .why-col.hyp li::before{ background:var(--accent); }
-  .why-col li b{ color:var(--ink); font-weight:800; }
-  .src-line{ flex:0 0 auto; margin-top:12px; font-size:12.5px; line-height:1.4; color:var(--faint); font-weight:500; letter-spacing:.005em; }
+  /* ===== S6 Patient journey + gates ===== */
+  .fbet{ display:grid; grid-template-columns:1.9fr 1fr; gap:52px; align-items:center; flex:1 1 auto; }
+  .journey{ display:flex; align-items:flex-start; justify-content:space-between; }
+  .jstep{ flex:0 0 auto; width:140px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; }
+  .jstep .jic{ width:78px; height:78px; border-radius:20px; background:var(--paper); border:2px solid var(--hair);
+    color:var(--accent-deep); display:flex; align-items:center; justify-content:center; }
+  .jstep .jn{ font-size:12px; font-weight:800; letter-spacing:.1em; color:var(--accent); }
+  .jstep .jt{ font-size:18px; font-weight:800; color:var(--ink); line-height:1.3; }
+  .jarr{ flex:1 1 auto; height:3px; background:#cbd6df; position:relative; margin:38px -8px 0; min-width:16px; }
+  .jarr::after{ content:""; position:absolute; right:-1px; top:-6px; border-left:12px solid #b7c2cf;
+    border-top:7px solid transparent; border-bottom:7px solid transparent; }
+  .gates{ border-left:1.5px solid var(--hair); padding-left:44px; }
+  .gates .gh{ font-size:19px; font-weight:800; color:var(--ink); margin-bottom:22px; }
+  .gate{ display:flex; align-items:center; gap:15px; padding:13px 0; }
+  .gate + .gate{ border-top:1px solid var(--hair); }
+  .gate .sig{ width:16px; height:16px; border-radius:50%; background:var(--sky); box-shadow:0 0 0 5px rgba(95,208,238,.18); flex:0 0 auto; }
+  .gate .gt{ font-size:22px; font-weight:800; color:var(--ink2); }
 
-  /* ===== S7 DA Health Loop (신규 3레이어) ===== */
-  .loop{ display:flex; flex-direction:column; gap:15px; flex:1 1 auto; justify-content:center; }
-  .loop-layer{ position:relative; border:1.5px solid var(--hair); border-radius:14px; background:var(--paper);
-    box-shadow:0 3px 12px rgba(20,26,51,.05); padding:18px 26px 18px 156px; }
-  .loop-layer .llab{ position:absolute; left:24px; top:0; bottom:0; width:118px; display:flex; flex-direction:column; justify-content:center;
-    font-size:16px; font-weight:800; color:var(--slate); line-height:1.3; border-right:1.5px solid var(--hair); }
-  .loop-layer.core{ border-color:var(--accent); background:#f5fbfd; }
-  .loop-layer.core .llab{ color:var(--accent-deep); border-right-color:#bfe0ec; }
-  .loop-flow{ display:flex; align-items:center; gap:6px; }
-  .loop-flow .ln{ flex:1 1 0; text-align:center; font-size:16.5px; font-weight:800; color:var(--ink);
-    background:var(--wash); border:1.5px solid var(--hair); border-radius:9px; padding:14px 8px; line-height:1.24; }
-  .loop-flow .lar{ flex:0 0 auto; color:var(--accent); font-weight:800; font-size:15px; }
-  .loop-mods{ display:grid; grid-template-columns:repeat(6,1fr); gap:12px; }
-  .loop-mod{ border:1.5px solid var(--hair); border-radius:10px; background:var(--paper); padding:13px 10px; text-align:center; }
-  .loop-mod .mn{ font-size:13px; font-weight:800; color:var(--slate); }
-  .loop-mod .mt{ margin-top:6px; font-size:16px; font-weight:800; color:var(--ink); line-height:1.24; }
-  .loop-mod.ai{ border:1.5px solid var(--accent); background:#e7f4f9; }
-  .loop-mod.ai .mn{ color:var(--accent-deep); }
-  .loop-ai-note{ margin-top:11px; font-size:14px; line-height:1.4; color:var(--ink2); font-weight:500; }
-  .loop-ai-note b{ color:var(--ink); font-weight:800; }
-  .loop-roles{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-  .loop-role{ border-top:3px solid var(--hair); padding-top:12px; }
-  .loop-role.dai{ border-top-color:var(--accent); }
-  .loop-role .rn{ font-size:16.5px; font-weight:800; color:var(--ink); }
-  .loop-role.dai .rn{ color:var(--accent-deep); }
-  .loop-role .rd{ margin-top:7px; font-size:15px; line-height:1.4; color:var(--ink2); font-weight:500; }
+  /* ===== S7 Roadmap chevrons ===== */
+  .road{ display:flex; align-items:stretch; gap:0; flex:0 0 auto; }
+  .chev{ flex:1 1 0; padding:26px 46px 26px 60px; display:flex; flex-direction:column; justify-content:center; min-width:0;
+    clip-path:polygon(0 0, calc(100% - 42px) 0, 100% 50%, calc(100% - 42px) 100%, 0 100%, 42px 50%); margin-left:-30px; }
+  .chev:first-child{ clip-path:polygon(0 0, calc(100% - 42px) 0, 100% 50%, calc(100% - 42px) 100%, 0 100%); margin-left:0; padding-left:46px; }
+  .chev.s1{ background:#dcedf4; }
+  .chev.s2{ background:var(--accent); }
+  .chev.s3{ background:var(--navy); }
+  .chev .cn{ font-size:15px; font-weight:800; letter-spacing:.12em; }
+  .chev .cnm{ margin-top:5px; font-size:27px; font-weight:800; letter-spacing:-.015em; }
+  .chev .cact{ margin-top:14px; display:flex; flex-direction:column; gap:5px; font-size:16.5px; font-weight:500; line-height:1.3; }
+  .chev .cres{ margin-top:16px; font-size:14px; font-weight:800; letter-spacing:.03em; }
+  .chev .cresv{ font-size:22px; font-weight:800; letter-spacing:-.01em; margin-top:3px; }
+  .chev.s1{ color:var(--ink2); } .chev.s1 .cn{ color:var(--accent-deep); } .chev.s1 .cnm{ color:var(--ink); } .chev.s1 .cres{ color:var(--slate); } .chev.s1 .cresv{ color:var(--accent-deep); }
+  .chev.s2{ color:#e7f6fb; } .chev.s2 .cn{ color:#d5f2fb; } .chev.s2 .cnm,.chev.s2 .cresv{ color:#fff; } .chev.s2 .cres{ color:#cbeef8; }
+  .chev.s3{ color:#c7d0e6; } .chev.s3 .cn{ color:var(--sky); } .chev.s3 .cnm{ color:#fff; } .chev.s3 .cres{ color:var(--sky); } .chev.s3 .cresv{ color:var(--sky); font-size:25px; }
+  .kpis{ flex:0 0 auto; display:flex; justify-content:space-between; gap:26px; margin-top:38px; }
+  .kpi{ flex:1; display:flex; align-items:center; gap:14px; }
+  .kpi .kic{ width:48px; height:48px; border-radius:12px; background:var(--wash); color:var(--accent-deep);
+    display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  .kpi .kk{ font-size:18px; font-weight:800; color:var(--ink); }
+  .kpi .kv{ font-size:15px; font-weight:500; color:var(--muted); margin-top:2px; }
 
-  /* ===== S8 use case selection (신규) ===== */
-  .uc{ display:grid; grid-template-columns:1fr 1.16fr; gap:32px; }
-  .uc-panel{ border:1.5px solid var(--hair); border-radius:14px; background:var(--paper);
-    box-shadow:0 4px 16px rgba(20,26,51,.05); padding:22px 28px; }
-  .uc-panel.cand{ border-color:var(--accent); }
-  .uc-panel .uh{ font-size:19px; font-weight:800; color:var(--ink); padding-bottom:12px; border-bottom:2.5px solid var(--hair); margin-bottom:4px; }
-  .uc-score{ list-style:none; counter-reset:sc; }
-  .uc-score li{ position:relative; padding:12.5px 0 12.5px 44px; font-size:18px; line-height:1.35; color:var(--ink2); font-weight:500; border-bottom:1px solid var(--hair2); }
-  .uc-score li:last-child{ border-bottom:none; }
-  .uc-score li::before{ counter-increment:sc; content:counter(sc); position:absolute; left:0; top:11px;
-    width:28px; height:28px; border-radius:50%; background:var(--wash); border:1.5px solid var(--accent);
-    color:var(--accent-deep); font-size:15px; font-weight:800; display:flex; align-items:center; justify-content:center; }
-  .uc-cand .cbig{ font-size:27px; font-weight:800; color:var(--accent-deep); line-height:1.24; letter-spacing:-.015em; }
-  .uc-cand ul{ list-style:none; margin-top:12px; }
-  .uc-cand li{ position:relative; padding:8px 0 8px 22px; font-size:17px; line-height:1.35; color:var(--ink2); font-weight:500; }
-  .uc-cand li::before{ content:""; position:absolute; left:0; top:15px; width:8px; height:8px; background:var(--accent); border-radius:50%; }
-  .uc-caveat{ margin-top:14px; border:2px dashed var(--accent);
-    background:#f5fbfd; border-radius:9px; padding:14px 18px; font-size:15.5px; line-height:1.46; color:var(--ink2); font-weight:600; }
-  .uc-caveat b{ color:var(--accent-deep); font-weight:800; }
-  .uc-journey{ margin-top:20px; }
-  .uc-journey .jl{ font-size:14px; font-weight:800; letter-spacing:.04em; color:var(--slate); margin-bottom:10px; }
-  .uc-jflow{ display:flex; align-items:stretch; gap:6px; }
-  .uc-jflow .jn2{ flex:1 1 0; text-align:center; font-size:15px; font-weight:700; color:var(--ink); background:var(--wash);
-    border:1.5px solid var(--hair); border-radius:8px; padding:11px 8px; line-height:1.24; display:flex; align-items:center; justify-content:center; }
-  .uc-jflow .jar2{ flex:0 0 auto; align-self:center; color:var(--accent); font-weight:800; font-size:14px; }
-  .uc-kpi{ margin-top:16px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-  .uc-kpi .kl{ font-size:14px; font-weight:800; letter-spacing:.04em; color:var(--slate); margin-right:2px; }
-  .uc-kpi .kp{ font-size:15px; font-weight:700; color:var(--ink2); background:var(--wash); border:1px solid var(--hair); border-radius:999px; padding:8px 15px; }
-  .uc-kpi .kp.safe{ color:var(--accent-deep); background:#e7f4f9; border-color:#bfe0ec; font-weight:800; }
-
-  /* ===== S9 three-stage execution (신규) ===== */
-  .s-exec3 .slide-content{ justify-content:flex-start; }
-  .exec3{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:18px; align-items:stretch; }
-  .st3{ border:1.5px solid var(--hair); border-radius:14px; background:var(--paper); overflow:hidden;
-    display:flex; flex-direction:column; box-shadow:0 4px 16px rgba(20,26,51,.05); }
-  .st3 .sh{ background:var(--navy); color:#fff; padding:12px 22px; display:flex; align-items:center; gap:12px; }
-  .st3 .sh .sn{ width:32px; height:32px; border-radius:50%; background:var(--accent); color:#fff; display:flex;
-    align-items:center; justify-content:center; font-weight:800; font-size:16px; flex:0 0 auto; }
-  .st3 .sh .snm{ font-size:22px; font-weight:800; letter-spacing:-.01em; }
-  .st3 .sq{ padding:11px 22px; background:var(--wash); border-bottom:1px solid var(--hair);
-    font-size:15.5px; line-height:1.38; color:var(--accent-deep); font-weight:700; }
-  .st3 .sbody{ padding:13px 22px; flex:1 1 auto; }
-  .st3 .sgrp + .sgrp{ margin-top:11px; }
-  .st3 .gl{ font-size:12.5px; font-weight:800; letter-spacing:.06em; color:var(--slate); margin-bottom:6px; }
-  .st3 ul{ list-style:none; }
-  .st3 li{ position:relative; padding:4px 0 4px 16px; font-size:15.5px; line-height:1.32; color:var(--ink2); font-weight:500; }
-  .st3 li::before{ content:""; position:absolute; left:0; top:11px; width:6px; height:6px; background:var(--slate2); border-radius:50%; }
-  .st3 .sgrp.out .gl{ color:var(--accent-deep); }
-  .st3 .sgrp.out li::before{ background:var(--accent); }
-  .st3 .sjudge{ margin-top:auto; background:var(--navy2); border-top:3px solid var(--accent); padding:12px 22px; }
-  .st3 .sjudge .gl{ color:#5fd0ee; }
-  .st3 .sjudge .jt{ font-size:15.5px; line-height:1.38; color:#fff; font-weight:700; }
-  .st3 .sjudge .jt b{ color:#5fd0ee; }
-
-  /* ===== S6 코나아이 (구·미사용 대비 유지) ===== */
-  .lead-wrap{ display:grid; grid-template-columns:1fr 1.28fr; gap:52px; align-items:center; }
-  .apply-line{ margin-top:6px; background:var(--navy); color:#fff; border-radius:10px; padding:22px 30px;
-    font-size:21px; line-height:1.5; letter-spacing:-.01em; }
-  .apply-line b{ color:#5fd0ee; font-weight:700; }
-  .apply-line .k{ display:inline-block; font-size:15px; font-weight:800; letter-spacing:.06em; color:#5fd0ee; margin-right:16px; }
-
-  /* ===== S9 stage-bottom banner ===== */
-  .stage-bottom{ margin-top:18px; background:var(--navy); border-radius:10px;
-    padding:20px 30px; font-size:21px; line-height:1.5; color:#fff; letter-spacing:-.01em; }
-  .stage-bottom b{ color:#5fd0ee; font-weight:800; }
-
-  /* ===== closing ===== */
-  .close-main{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; }
-  .close-title{ font-size:54px; font-weight:800; line-height:1.24; color:#fff; letter-spacing:-.024em;
-    max-width:1380px; margin-bottom:50px; }
-  .close-title .em{ color:#5fd0ee; }
-  .evid{ display:flex; gap:0; margin-bottom:46px; }
-  .evid .e{ flex:1; padding-right:30px; }
-  .evid .e + .e{ padding-left:30px; border-left:1px solid rgba(255,255,255,.15); }
-  .evid .e .en{ font-size:18px; font-weight:800; letter-spacing:.14em; color:rgba(95,208,238,.5); }
-  .evid .e .ek{ margin-top:8px; font-size:30px; font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1; }
-  .evid .e .ed{ margin-top:16px; font-size:18px; font-weight:500; color:#b3bcda; line-height:1.45; letter-spacing:-.005em; }
-  .close-line{ font-size:25px; font-weight:600; line-height:1.5; color:#ccd3e7; letter-spacing:-.012em; max-width:1360px; }
-  .close-line .em{ color:#fff; font-weight:800; }
+  /* ===== S8 Commitment ===== */
+  .commit{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:2; }
+  .commit-title{ font-size:52px; font-weight:800; line-height:1.26; color:#fff; letter-spacing:-.022em; max-width:1240px; }
+  .commit-title .em{ color:var(--sky); }
+  .promises{ display:flex; gap:0; margin-top:56px; }
+  .promise{ flex:1; padding-right:44px; }
+  .promise + .promise{ padding-left:44px; border-left:1px solid rgba(255,255,255,.16); }
+  .promise .pn{ font-size:56px; font-weight:800; color:var(--sky); line-height:1; letter-spacing:-.02em; }
+  .promise .pt{ margin-top:18px; font-size:27px; font-weight:800; color:#fff; line-height:1.3; letter-spacing:-.01em; }
+  .commit-foot{ margin-top:52px; font-size:22px; font-weight:500; color:#ccd3e7; line-height:1.6; letter-spacing:-.01em; }
+  .commit-foot b{ font-weight:800; color:#fff; }
 
   /* ---- print ---- */
   @page{ size:1600px 900px; margin:0; }
@@ -306,470 +268,314 @@
 
 <!-- ============ 01 COVER ============ -->
 <div class="stage"><section class="slide slide-cover">
+  <svg class="cover-loop" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <circle cx="100" cy="100" r="82" stroke="#5fd0ee" stroke-width="1.2" stroke-dasharray="2 7" opacity=".55"/>
+    <circle cx="100" cy="18" r="8" fill="#5fd0ee"/>
+    <circle cx="182" cy="100" r="8" fill="#5fd0ee"/>
+    <circle cx="100" cy="182" r="8" fill="#5fd0ee"/>
+    <circle cx="18" cy="100" r="8" fill="#5fd0ee"/>
+    <path d="M118 26 A82 82 0 0 1 174 82" stroke="#5fd0ee" stroke-width="2.4" fill="none"/>
+    <path d="M174 118 A82 82 0 0 1 118 174" stroke="#5fd0ee" stroke-width="2.4" fill="none"/>
+    <path d="M82 174 A82 82 0 0 1 26 118" stroke="#5fd0ee" stroke-width="2.4" fill="none"/>
+    <path d="M26 82 A82 82 0 0 1 82 26" stroke="#5fd0ee" stroke-width="2.4" fill="none"/>
+    <path d="M168 84 l7 -2 -3 7 Z" fill="#5fd0ee"/>
+    <path d="M116 172 l2 7 -7 -3 Z" fill="#5fd0ee"/>
+    <path d="M32 116 l-7 2 3 -7 Z" fill="#5fd0ee"/>
+    <path d="M84 32 l-2 -7 7 3 Z" fill="#5fd0ee"/>
+  </svg>
   <div class="cover-brand"><span class="dot"></span>동아쏘시오그룹 · DAI &nbsp;|&nbsp; AI 헬스케어 플랫폼 팀장 지원</div>
   <div class="cover-main">
     <div class="eyebrow">면접 발표</div>
-    <h1 style="margin-top:30px">흩어진 헬스케어 접점을<br><span class="em">측정 가능한 플랫폼 사업으로</span></h1>
+    <h1 style="margin-top:32px">흩어진 헬스케어 접점을<br><span class="em">성과가 순환하는 플랫폼으로</span></h1>
     <div class="cover-sub">대표 프로젝트 성과와 DAI 입사 후 실행 제안</div>
-    <div class="cover-name">
-      <span class="nm">정치성</span><span class="dt">· 2026.09.16</span>
-    </div>
+    <div class="cover-name"><span class="nm">정치성</span><span class="dt">· 2026.09.16</span></div>
   </div>
   <div class="cover-foot">
     <span>2026 · 임원 면접 발표</span>
-    <span class="page-number">01 / 10</span>
+    <span class="page-number">01 / 08</span>
   </div>
 </section></div>
 
-<!-- ============ 02 EXECUTIVE SUMMARY (신규) ============ -->
+<!-- ============ 02 WHY ME · Bridge ============ -->
 <div class="stage"><section class="slide">
-  <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
-    <div class="eyebrow">제안 요약</div>
-    <h1>저는 플랫폼을 크게 시작하지 않고,<br><span class="lite">하나의 </span><span class="em">환자 여정에서 성과를 증명한 뒤 확장</span><span class="lite">하겠습니다</span></h1>
+    <div class="eyebrow">강점</div>
+    <h1>사용자 여정과 현장 운영을<br><span class="em">하나의 제품</span><span class="lite">으로 연결해 왔습니다</span></h1>
   </header>
   <div class="slide-content">
-    <div class="exec-cards">
-      <div class="exec-card">
-        <div class="en">01</div>
-        <div class="et">제가 이해한 DAI</div>
-        <div class="eb">그룹 IT 운영을 넘어 <b>제약·바이오·헬스케어의 AX 성과</b>를 만들어야 하는 전환기</div>
-      </div>
-      <div class="exec-card mid">
-        <div class="en">02</div>
-        <div class="et">제가 제안하는 방향</div>
-        <div class="eb">분산된 진단·모니터링·관리 접점을 <b>공통 데이터와 Care Journey로 연결</b>하는 AI 헬스케어 플랫폼</div>
-      </div>
-      <div class="exec-card">
-        <div class="en">03</div>
-        <div class="et">제가 실행하는 방식</div>
-        <div class="exec-flow">
-          <div class="ef">이해와 선택</div>
-          <div class="ar">↓</div>
-          <div class="ef">설계와 검증</div>
-          <div class="ar">↓</div>
-          <div class="ef">구축과 확장</div>
+    <div class="bridge-wrap">
+      <div class="bridge">
+        <div class="bnode">
+          <div class="ring" aria-hidden="true"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.7"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div class="bt">사용자</div>
+          <div class="bd">무엇을 완료해야 하는가</div>
+        </div>
+        <div class="barrow" aria-hidden="true"></div>
+        <div class="bnode hub">
+          <div class="ring" aria-hidden="true"><svg width="54" height="54" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2.4" stroke="currentColor" stroke-width="1.7"/><path d="M4 10h16M9 18v2M15 18v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div class="bt">제품</div>
+          <div class="bd">경험과 업무의 연결</div>
+        </div>
+        <div class="barrow" aria-hidden="true"></div>
+        <div class="bnode">
+          <div class="ring" aria-hidden="true"><svg width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 20V9l6-4 6 4v11" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20v-4h4v4M11 10h2M12 9v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div class="bt">현장</div>
+          <div class="bd">무엇을 처리해야 하는가</div>
         </div>
       </div>
+      <div class="caps">
+        <div class="cap"><div class="cv">전환</div><div class="cc">굿리치</div></div>
+        <div class="cap"><div class="cv">운영</div><div class="cc">THK</div></div>
+        <div class="cap"><div class="cv">연동</div><div class="cc">병원 원무</div></div>
+        <div class="cap"><div class="cv">조직 실행</div><div class="cc">코나아이</div></div>
+      </div>
     </div>
-    <div class="content-caption"><span>하나의 우선과제, <b>측정 가능한 KPI</b>, <span class="em">검증 이후의 확장</span></span></div>
-    <div class="exec-sub">전환 · 운영 · 연동 · 조직 실행 경험을 DAI의 플랫폼 사업화에 적용하겠습니다.</div>
+    <div class="lead" style="text-align:center;margin-top:38px">산업은 달랐지만, 고객 행동과 운영 프로세스를 <b>함께 바꾼 경험</b>은 동일합니다.</div>
   </div>
-  <footer class="slide-footer">
-    <div class="source"></div><div class="page-number">02 / 10</div>
-  </footer>
+  <footer class="slide-footer"><span class="brandmark">정치성 · DAI</span><span class="page-number">02 / 08</span></footer>
 </section></div>
 
-<!-- ============ 03 핵심 역량 ============ -->
+<!-- ============ 03 PROOF · Metric impact ============ -->
 <div class="stage"><section class="slide">
-  <div class="wm">DAI · 정치성</div>
   <header class="slide-header">
-    <div class="eyebrow">핵심 역량</div>
-    <h1>사용자가 할 일과 현장이 처리할 일을 함께 설계해<br><span class="lite">팀의 실행으로 연결해 왔습니다.</span></h1>
+    <div class="eyebrow">성과</div>
+    <h1>성과는 <span class="em">숫자와 실행 범위</span><span class="lite">로 증명했습니다</span></h1>
   </header>
   <div class="slide-content">
-    <div class="cap-map">
-      <div class="cap-head">
-        <div class="ch">경험 · 도메인</div>
-        <div class="ch">사용자 과제</div>
-        <div class="ch"></div>
-        <div class="ch">현장 · 조직 과제</div>
-        <div class="ch">증명한 역량</div>
-      </div>
-      <div class="cap-row">
-        <div class="dom">굿리치<span>보험 · 인슈어테크</span></div>
-        <div class="cell">보험분석 후 상담신청</div>
-        <div class="uo-arrow">→</div>
-        <div class="cell">상담 활용 정보의 품질 확인</div>
-        <div class="proof">전환</div>
-      </div>
-      <div class="cap-row">
-        <div class="dom">THK<span>장기요양 · 돌봄</span></div>
-        <div class="cell">수급자 자격·구매정보 조회</div>
-        <div class="uo-arrow">→</div>
-        <div class="cell">주문·직배송 및 예외처리</div>
-        <div class="proof">운영</div>
-      </div>
-      <div class="cap-row">
-        <div class="dom">병원 원무<span>의료기관 · 수납</span></div>
-        <div class="cell">예약·조회·수납</div>
-        <div class="uo-arrow">→</div>
-        <div class="cell">EMR 연동 및 기관별 요구 조율</div>
-        <div class="proof">연동</div>
-      </div>
-      <div class="cap-row">
-        <div class="dom">코나아이<span>지역화폐 · 결제</span></div>
-        <div class="cell">지역화폐·카드 이용</div>
-        <div class="uo-arrow">→</div>
-        <div class="cell">3개 팀의 우선순위와 실행 관리</div>
-        <div class="proof">조직 실행</div>
-      </div>
-    </div>
-    <div class="content-caption"><span>산업은 달랐지만, <b>고객 여정과 운영 프로세스를 하나의 제품으로 연결</b>한 경험은 동일합니다.</span></div>
-  </div>
-  <footer class="slide-footer">
-    <div class="source"></div><div class="page-number">03 / 10</div>
-  </footer>
-</section></div>
-
-<!-- ============ 04 정량 성과 (굿리치+THK 병합) ============ -->
-<div class="stage"><section class="slide">
-  <div class="wm">DAI · 정치성</div>
-  <header class="slide-header">
-    <div class="eyebrow">대표 성과 · 전환과 운영</div>
-    <h1>사용자 행동과 운영 흐름을 바꿔<br><span class="lite">전환과 처리시간을 </span><span class="em">개선</span><span class="lite">했습니다.</span></h1>
-  </header>
-  <div class="slide-content">
-    <div class="mcards">
-      <div class="mcard">
-        <div class="mh">굿리치 · 보험분석 상담신청</div>
-        <div class="mhero">
-          <div class="n"><span class="pre">기존 대비</span>20<span class="u">%</span></div>
-          <div class="tag">개선</div>
-        </div>
-        <div class="msub">상담신청 <b>전환율</b></div>
-        <div class="mrows">
-          <div class="mrow"><div class="rl">문제</div><div class="rt">상세 분석결과를 <b>상담 전에 모두 공개</b>해 상담신청 동기가 약하고 이탈 발생</div></div>
-          <div class="mrow"><div class="rl">실행</div><div class="rt">간단 결과는 먼저 제공하고, 상세 리포트는 <b>상담신청 완료 후 제공</b></div></div>
-          <div class="mrow"><div class="rl">결과</div><div class="rt">상담신청 전환율 <b>기존 대비 20% 개선</b></div></div>
-        </div>
-        <div class="mguard"><span class="k">Guardrail</span> · 상담 활용 정보의 품질과 설계사 클레임을 함께 점검</div>
-      </div>
-      <div class="mcard">
-        <div class="mh">THK · 제조사 직배송 운영</div>
-        <div class="mhero">
-          <div class="n"><span class="pre">약</span>67<span class="u">%</span></div>
-          <div class="tag">단축</div>
-        </div>
-        <div class="msub">일일 처리시간 <b>약 6시간 → 약 2시간</b></div>
-        <div class="mrows">
-          <div class="mrow"><div class="rl">문제</div><div class="rt">재고 미보유 주문을 <b>수기로 확인</b>하고 제조사별 연락과 예외처리에 업무 집중</div></div>
-          <div class="mrow"><div class="rl">실행</div><div class="rt">주문 상태와 담당업무, 예외처리를 구조화하고 <b>관리자 시스템에 반영</b></div></div>
-          <div class="mrow"><div class="rl">결과</div><div class="rt">고물량 제조사 적용 구간에서 일일 처리시간 <b>약 67% 단축</b></div></div>
-        </div>
-        <div class="mguard"><span class="k">적용 범위</span> · 고물량 제조사 적용 구간의 일일 처리업무 기준</div>
-      </div>
-    </div>
-    <div class="content-caption"><span class="lead">DAI 적용</span><span>사용자 KPI와 <b>현장 운영 KPI</b>를 함께 설계하겠습니다.</span></div>
-  </div>
-  <footer class="slide-footer">
-    <div class="source"></div><div class="page-number">04 / 10</div>
-  </footer>
-</section></div>
-
-<!-- ============ 05 병원 연동과 조직 실행 (EMR+코나 병합) ============ -->
-<div class="stage"><section class="slide">
-  <div class="wm">DAI · 정치성</div>
-  <header class="slide-header">
-    <div class="eyebrow">대표 경험 · 연동과 조직 실행</div>
-    <h1>기존 시스템을 활용하고,<br><span class="lite">복잡한 이해관계자를 </span><span class="em">실행 가능한 범위</span><span class="lite">로 정리했습니다.</span></h1>
-  </header>
-  <div class="slide-content">
-    <div class="dual">
-      <div class="dual-col">
-        <div class="dh">병원 원무<span>기존 EMR API 연동</span></div>
-        <div class="dflow">
-          <div class="dn">예약</div><div class="dar"></div>
-          <div class="dn">도착 확인</div><div class="dar"></div>
-          <div class="dn">조회</div><div class="dar"></div>
-          <div class="dn">수납</div>
-        </div>
-        <ul>
-          <li>기존 <b>EMR API의 데이터와 기능을 재사용</b></li>
-          <li>병원 · EMR사 · 개발조직의 요구사항 조율</li>
-          <li>기관별 차이를 확인하고 공통화 가능 범위를 검토</li>
-          <li>환자가 쓰는 화면과 원무팀이 처리할 업무를 함께 설계</li>
-        </ul>
-        <div class="dual-tags">
-          <span class="tg">기존 자산 활용</span><span class="tg">기관별 차이 조율</span><span class="tg">공통화 검토</span>
-        </div>
-      </div>
-      <div class="dual-col">
-        <div class="dh">코나아이<span>3개 팀 실행 관리</span></div>
-        <ul>
-          <li><b>코나카드는 직접 겸직</b>, 지역화폐·모빌리티는 팀장 중심 운영</li>
-          <li>외부 약속, 법률·운영 위험, 공통효과를 기준으로 우선순위 결정</li>
-          <li>PRD의 목적·KPI와 상세기획 연결 확인</li>
-          <li>어려운 요구는 <b>범위·일정·인력의 선택안</b>으로 경영진에게 보고</li>
-        </ul>
-        <div class="dual-tags">
-          <span class="tg">우선순위</span><span class="tg">RACI</span><span class="tg">경영진 의사결정</span><span class="tg">실행관리</span>
-        </div>
-      </div>
-    </div>
-    <div class="apply-line"><span class="k">DAI 적용</span>계열사, 의료기관, 기술 파트너의 요구를 <b>하나의 제품 범위와 책임구조</b>로 정리하겠습니다.</div>
-  </div>
-  <footer class="slide-footer">
-    <div class="source"></div><div class="page-number">05 / 10</div>
-  </footer>
-</section></div>
-
-<!-- ============ 06 DAI에 대한 이해 · Why Now (신규) ============ -->
-<div class="stage"><section class="slide">
-  <div class="wm">DAI · 정치성</div>
-  <header class="slide-header">
-    <div class="eyebrow">DAI 이해 · Why Now</div>
-    <h1>DAI의 기회는 솔루션을 하나 더 만드는 것이 아니라,<br><span class="lite">그룹의 접점을 </span><span class="em">플랫폼 자산으로 전환</span><span class="lite">하는 데 있습니다.</span></h1>
-  </header>
-  <div class="slide-content">
-    <div class="why">
-      <div class="why-col">
-        <div class="wh">DAI의 전환</div>
-        <ul>
-          <li>기존 IT 구축·운영 중심</li>
-          <li><b>AI 기반 AX 혁신 파트너</b>로 전환</li>
-          <li>기술 도입보다 업무방식과 의사결정의 변화 추구</li>
-          <li>그룹 내부 경험을 외부 사업으로 확장해야 하는 단계</li>
-        </ul>
-      </div>
-      <div class="why-col">
-        <div class="wh">그룹의 기반</div>
-        <ul>
-          <li>제약·바이오 도메인과 병원 채널</li>
-          <li>진단, 모니터링, 복약·관리 솔루션</li>
-          <li>GMP · CSV · Data Integrity 역량</li>
-          <li>AI·데이터 및 플랫폼 개발조직</li>
-        </ul>
-      </div>
-      <div class="why-col hyp">
-        <div class="wh">첫 문제 가설 <span class="lab">공개자료 기반 가설 · 입사 후 확인</span></div>
-        <ul>
-          <li>제품과 파트너는 존재하지만 환자 여정은 개별 접점으로 운영될 수 있음</li>
-          <li>서비스마다 동의·권한·데이터·운영체계를 반복 구축할 가능성</li>
-          <li>실제 연결 가능성은 <b>데이터·API·계약 조건 확인 필요</b></li>
-          <li>플랫폼 구축 자체보다 환자·의료진·사업 KPI 증명이 우선</li>
-        </ul>
-      </div>
-    </div>
-    <div class="content-caption"><span>공통 플랫폼은 먼저 크게 구축하는 인프라가 아니라, <b>첫 사용사례를 해결하며 축적하는 재사용 자산</b>이어야 합니다.</span></div>
-    <div class="src-line">출처: DAI 사명 변경 및 AX 전환 발표, 동아쏘시오그룹 AI직군 채용공고, 동아ST 디지털 헬스케어 공개자료</div>
-  </div>
-  <footer class="slide-footer">
-    <div class="source"></div><div class="page-number">06 / 10</div>
-  </footer>
-</section></div>
-
-<!-- ============ 07 플랫폼 제안 · DA Health Loop (신규) ============ -->
-<div class="stage"><section class="slide">
-  <div class="wm">DAI · 정치성</div>
-  <header class="slide-header">
-    <div class="eyebrow">DAI 기여 · 플랫폼 방향</div>
-    <h1><span class="em">DA Health Loop</span><br><span class="lite">진단·모니터링·관리를 다음 행동과 근거로 연결합니다.</span></h1>
-  </header>
-  <div class="slide-content">
-    <div class="loop">
-      <div class="loop-layer">
-        <div class="llab">환자 · 의료진<br>경험</div>
-        <div class="loop-flow">
-          <div class="ln">등록 · 동의</div><div class="lar">→</div>
-          <div class="ln">측정 · 문진</div><div class="lar">→</div>
-          <div class="ln">상태 확인</div><div class="lar">→</div>
-          <div class="ln">교육 · 알림</div><div class="lar">→</div>
-          <div class="ln">의료진 검토</div><div class="lar">→</div>
-          <div class="ln">다음 진료 · 관리 행동</div>
-        </div>
-      </div>
-      <div class="loop-layer core">
-        <div class="llab">공통 플랫폼<br>역량</div>
-        <div class="loop-mods">
-          <div class="loop-mod"><div class="mn">01</div><div class="mt">Identity · Consent</div></div>
-          <div class="loop-mod"><div class="mn">02</div><div class="mt">API · 데이터 표준</div></div>
-          <div class="loop-mod"><div class="mn">03</div><div class="mt">Care Journey Engine</div></div>
-          <div class="loop-mod ai"><div class="mn">04</div><div class="mt">AI · Agent</div></div>
-          <div class="loop-mod"><div class="mn">05</div><div class="mt">KPI · RWD/RWE</div></div>
-          <div class="loop-mod"><div class="mn">06</div><div class="mt">보안 · 감사로그</div></div>
-        </div>
-        <div class="loop-ai-note"><b>AI · Agent 초기 적용</b>: 정보 요약 · 교육 · 운영지원 &nbsp;/&nbsp; <b>의료적 판단</b>: 임상기준과 의료진이 최종 수행</div>
-      </div>
-      <div class="loop-layer">
-        <div class="llab">역할과<br>책임</div>
-        <div class="loop-roles">
-          <div class="loop-role dai"><div class="rn">DAI</div><div class="rd">공통 플랫폼 · 데이터 · AI · 보안 · 운영</div></div>
-          <div class="loop-role"><div class="rn">사업 계열사</div><div class="rd">치료영역 · 고객채널 · 상품 · P&amp;L</div></div>
-          <div class="loop-role"><div class="rn">기술 파트너</div><div class="rd">기기 · 전문 알고리즘 · 외부 솔루션</div></div>
-          <div class="loop-role"><div class="rn">의료기관 · 의료진</div><div class="rd">임상기준 · 현장검증 · 최종 의료적 판단</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="content-caption"><span>하나의 공통 플랫폼을 먼저 만드는 것이 아니라, <b>하나의 환자 여정에서 검증된 기능을 공통 플랫폼 자산으로 축적</b>합니다.</span></div>
-  </div>
-  <footer class="slide-footer">
-    <div class="source"></div><div class="page-number">07 / 10</div>
-  </footer>
-</section></div>
-
-<!-- ============ 08 첫 사용사례 선택 (신규) ============ -->
-<div class="stage"><section class="slide">
-  <div class="wm">DAI · 정치성</div>
-  <header class="slide-header">
-    <div class="eyebrow">DAI 기여 · 첫 사용사례</div>
-    <h1>첫 과제는 연결하기 쉬운 제품이 아니라,<br><span class="lite">성과와 </span><span class="em">지불 가능성을 증명할 수 있는 환자 여정</span><span class="lite">으로 선택하겠습니다.</span></h1>
-  </header>
-  <div class="slide-content">
-    <div class="uc">
-      <div class="uc-panel">
-        <div class="uh">사용사례 Scorecard</div>
-        <ol class="uc-score">
-          <li>환자·의료진 문제가 충분히 큰가</li>
-          <li>그룹이 고객·채널·도메인 우위를 갖는가</li>
-          <li>데이터·API·계약상 연결이 가능한가</li>
-          <li>규제와 안전 리스크를 통제할 수 있는가</li>
-          <li>비용을 지불할 고객과 반복 수익 가능성이 있는가</li>
-        </ol>
-      </div>
-      <div class="uc-panel cand uc-cand">
-        <div class="uh">첫 검증 후보</div>
-        <div class="cbig">하이카디 기반 심혈관 모니터링·추적관리 Care Loop</div>
-        <ul>
-          <li>공개적으로 확인되는 병원 도입 기반</li>
-          <li>웨어러블과 RWD/RWE 활용 가능성</li>
-          <li>환자와 의료진이 모두 참여하는 명확한 Journey</li>
-          <li>동아ST의 병원 채널과 DAI의 플랫폼 역량 결합 가능성</li>
-        </ul>
-        <div class="uc-caveat"><b>확정안이 아니라 첫 검증 후보입니다.</b> 데이터·API 권리, 병원 수요, 규제, 지불 의사를 확인한 뒤 우선순위를 확정합니다.</div>
-      </div>
-    </div>
-    <div class="uc-journey">
-      <div class="jl">환자 여정 예시</div>
-      <div class="uc-jflow">
-        <div class="jn2">환자 등록 · 동의</div><div class="jar2">→</div>
-        <div class="jn2">생체신호 측정</div><div class="jar2">→</div>
-        <div class="jn2">승인된 규칙 및 AI 요약</div><div class="jar2">→</div>
-        <div class="jn2">의료진 검토</div><div class="jar2">→</div>
-        <div class="jn2">상담 · 재방문 · 관리 행동</div><div class="jar2">→</div>
-        <div class="jn2">서비스 개선 및 RWD/RWE</div>
-      </div>
-    </div>
-    <div class="uc-kpi">
-      <span class="kl">KPI</span>
-      <span class="kp">측정 지속률</span>
-      <span class="kp">다음 행동 연결률</span>
-      <span class="kp">의료진 확인률</span>
-      <span class="kp">데이터 완결성</span>
-      <span class="kp">업무시간</span>
-      <span class="kp">유료 Pilot 전환</span>
-      <span class="kp safe">안전 인시던트: 0건 목표</span>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <div class="source"></div><div class="page-number">08 / 10</div>
-  </footer>
-</section></div>
-
-<!-- ============ 09 입사 후 단계별 실행 (신규) ============ -->
-<div class="stage"><section class="slide s-exec3">
-  <div class="wm">DAI · 정치성</div>
-  <header class="slide-header">
-    <div class="eyebrow">DAI 기여 · 실행계획</div>
-    <h1>입사 후 <span class="em">세 단계</span>로 판단하고 실행하겠습니다.</h1>
-  </header>
-  <div class="slide-content">
-    <div class="exec3">
-      <div class="st3">
-        <div class="sh"><div class="sn">1</div><div class="snm">이해와 선택</div></div>
-        <div class="sq">무엇을 먼저 해결해야 하며, 그룹이 이길 수 있는 영역은 어디인가?</div>
-        <div class="sbody">
-          <div class="sgrp">
-            <div class="gl">실행</div>
-            <ul>
-              <li>환자·의료진·사업부서·개발조직 인터뷰</li>
-              <li>기존 제품·데이터·API·계약·비용 구조 파악</li>
-              <li>개인정보·의료기기·보안 요구사항 확인</li>
-              <li>사용자·운영·사업 KPI 기준선 확인</li>
-              <li>후보 사용사례를 Scorecard로 비교</li>
-            </ul>
-          </div>
-          <div class="sgrp out">
-            <div class="gl">산출물</div>
-            <ul>
-              <li>해결할 문제와 기대성과 합의</li>
-              <li>우선 사용사례와 Pilot 후보</li>
-              <li>이해관계자 및 RACI 초안</li>
-              <li>미확인 가정과 주요 리스크 목록</li>
-            </ul>
+    <div class="proof">
+      <div class="metric">
+        <div class="mco">굿리치</div>
+        <div class="mnum"><span class="sg">+</span>20<span class="u">%</span></div>
+        <div class="mlabel">상담신청 전환율</div>
+        <div class="mviz">
+          <div class="fun" aria-hidden="true">
+            <div class="fb b1"><div class="bar"></div><div class="fl">상세결과<br>우선 공개</div></div>
+            <div class="fup">→</div>
+            <div class="fb b2"><div class="bar"></div><div class="fl">상담신청 후<br>상세 리포트</div></div>
           </div>
         </div>
-        <div class="sjudge"><div class="gl">진행 판단</div><div class="jt">가치·실행 가능성·<b>지불 가능성</b>이 확인된 과제만 다음 단계로 진행</div></div>
+        <div class="mline">정보 제공 순서를 바꿔 상담 행동을 높였습니다.</div>
+        <div class="msub">기존 대비 상대 개선 · 상담정보 품질과 클레임을 함께 확인</div>
       </div>
-
-      <div class="st3">
-        <div class="sh"><div class="sn">2</div><div class="snm">설계와 검증</div></div>
-        <div class="sq">환자와 의료진이 실제로 사용할 수 있고, 기술·규제·사업 조건을 충족하는가?</div>
-        <div class="sbody">
-          <div class="sgrp">
-            <div class="gl">실행</div>
-            <ul>
-              <li>환자·의료진 Journey와 PRD 작성</li>
-              <li>DAI·계열사·파트너 역할 확정</li>
-              <li>Build vs Buy 및 목표 아키텍처 결정</li>
-              <li>동의·권한·데이터 표준 설계</li>
-              <li>비진단 Prototype·핵심 연동 기술검증을 Design Partner와 수행</li>
-            </ul>
-          </div>
-          <div class="sgrp out">
-            <div class="gl">산출물</div>
-            <ul>
-              <li>검증된 Prototype과 핵심 데이터 연동 결과</li>
-              <li>규제·보안 검토 결과</li>
-              <li>Pilot 범위·KPI·비용 및 사업성 검토</li>
-              <li>진행·수정·보류 추천안</li>
-            </ul>
+      <div class="vdiv" aria-hidden="true"></div>
+      <div class="metric">
+        <div class="mco">THK</div>
+        <div class="mnum"><span class="sg">−</span>67<span class="u">%</span></div>
+        <div class="mlabel">직배송 처리시간</div>
+        <div class="mviz">
+          <div class="tbars" aria-hidden="true">
+            <div class="tbar b1"><div class="tl">개선 전</div><div class="tt">6시간</div></div>
+            <div class="tbar b2"><div class="tl">개선 후</div><div class="tt">2시간</div></div>
           </div>
         </div>
-        <div class="sjudge"><div class="gl">진행 판단</div><div class="jt">사용성·연동·규제 대응·<b>사업성</b>이 확인된 경우에만 구축</div></div>
-      </div>
-
-      <div class="st3">
-        <div class="sh"><div class="sn">3</div><div class="snm">구축과 확장</div></div>
-        <div class="sq">실제 운영에서 성과가 발생하며, 다른 기관과 질환에도 재사용할 수 있는가?</div>
-        <div class="sbody">
-          <div class="sgrp">
-            <div class="gl">실행</div>
-            <ul>
-              <li>제한된 범위 Pilot 운영 · 환자·의료진·운영·사업 KPI 측정</li>
-              <li>장애·오류·누락·사용자 피드백 관리</li>
-              <li>유료 전환 및 반복 수익 가능성 검증</li>
-              <li>동의·데이터·Journey·AI 기능을 플랫폼 자산화</li>
-              <li>두 번째 기관 또는 질환으로 확장 검토</li>
-            </ul>
-          </div>
-          <div class="sgrp out">
-            <div class="gl">산출물</div>
-            <ul>
-              <li>KPI Dashboard와 운영 결과</li>
-              <li>유료 전환 또는 사업 지속 판단</li>
-              <li>재사용 가능한 공통 플랫폼 모듈</li>
-              <li>확대·보완·중단에 대한 경영진 추천안</li>
-            </ul>
-          </div>
-        </div>
-        <div class="sjudge"><div class="gl">진행 판단</div><div class="jt">성과·<b>단위경제성</b> 확인 시 확대, 미달 시 범위 수정·중단</div></div>
+        <div class="mline">수기 확인과 예외처리를 시스템 흐름으로 구조화했습니다.</div>
       </div>
     </div>
-    <div class="stage-bottom">경영진에게는 <b>선택의 근거와 추천안</b>을, 실행조직에는 <b>명확한 범위와 판단기준</b>을 제시하겠습니다.</div>
+    <div class="evi-row">
+      <div class="evi"><span class="d"></span>EMR API로 예약부터 수납까지 연결</div>
+      <div class="evi"><span class="d"></span>3개 팀의 우선순위와 경영진 의사결정 지원</div>
+    </div>
+  </div>
+  <footer class="slide-footer"><span class="brandmark">정치성 · DAI</span><span class="page-number">03 / 08</span></footer>
+</section></div>
+
+<!-- ============ 04 WHY DAI · Transformation ============ -->
+<div class="stage"><section class="slide">
+  <header class="slide-header">
+    <div class="eyebrow">기회</div>
+    <h1>DAI의 다음 성장은<br><span class="lite">개별 솔루션이 아닌 </span><span class="em">연결된 환자 여정</span><span class="lite">에서 나옵니다</span></h1>
+  </header>
+  <div class="slide-content">
+    <div class="xform">
+      <div class="xzone left">
+        <div class="zlabel">흩어진 접점</div>
+        <div class="scatter" aria-hidden="false">
+          <div class="snode" style="left:0;top:12px">진단</div>
+          <div class="snode" style="left:150px;top:64px">모니터링</div>
+          <div class="snode" style="left:18px;top:150px">복약</div>
+          <div class="snode" style="left:158px;top:210px">관리</div>
+        </div>
+      </div>
+      <div class="xarrow" aria-hidden="true"></div>
+      <div class="xzone mid">
+        <div class="zlabel">DAI · 공통 기반</div>
+        <div class="hub">
+          <div class="kw" style="top:8px;left:50%;transform:translateX(-50%)">동의</div>
+          <div class="kw" style="top:50%;right:0;transform:translateY(-50%)">데이터</div>
+          <div class="kw" style="bottom:8px;left:50%;transform:translateX(-50%)">운영</div>
+          <div class="kw" style="top:50%;left:0;transform:translateY(-50%)">AI</div>
+          <div class="core"><div class="ct">DAI</div><div class="cs">공통 기반</div></div>
+        </div>
+      </div>
+      <div class="xarrow" aria-hidden="true"></div>
+      <div class="xzone right">
+        <div class="zlabel">연결된 환자 여정</div>
+        <div class="miniloop" aria-hidden="false">
+          <svg class="ring-svg" style="position:absolute;inset:0" width="300" height="300" viewBox="0 0 300 300" fill="none" aria-hidden="true">
+            <circle cx="150" cy="150" r="118" stroke="#bfe6f2" stroke-width="2.4" stroke-dasharray="3 8"/>
+          </svg>
+          <div class="ml-node" style="left:150px;top:32px">환자</div>
+          <div class="ml-node" style="left:262px;top:114px">의료진</div>
+          <div class="ml-node" style="left:220px;top:246px">다음 행동</div>
+          <div class="ml-node" style="left:80px;top:246px">결과</div>
+          <div class="ml-node" style="left:38px;top:114px">서비스<br>개선</div>
+        </div>
+      </div>
+    </div>
+    <div class="lead" style="text-align:center;margin-top:34px">그룹의 접점을 연결하고, <b>검증된 기능을 반복 가능한 플랫폼 자산</b>으로 만들겠습니다.</div>
+    <div class="note" style="text-align:center">공개자료 기반 가설이며, 데이터·API·계약 조건은 입사 후 확인합니다.</div>
   </div>
   <footer class="slide-footer">
-    <div class="source"></div><div class="page-number">09 / 10</div>
+    <span class="src">출처 · DAI 사명 변경 및 AX 전환 발표 / 동아쏘시오그룹 AI직군 채용공고 / 동아ST 디지털 헬스케어 공개자료</span>
+    <span class="page-number">04 / 08</span>
   </footer>
 </section></div>
 
-<!-- ============ 10 CLOSING ============ -->
+<!-- ============ 05 PROPOSAL · Care Loop ============ -->
+<div class="stage"><section class="slide">
+  <header class="slide-header">
+    <div class="eyebrow">제안</div>
+    <h1>DA Health Loop<span class="gacheong">가칭</span><br><span class="lite">측정이 </span><span class="em">의료진의 판단과 다음 행동</span><span class="lite">으로 이어지게 하겠습니다</span></h1>
+  </header>
+  <div class="slide-content">
+    <div class="care">
+      <div class="care-side left">
+        <div class="found"><div class="fk">사용자·동의</div></div>
+        <div class="found"><div class="fk">데이터·API</div></div>
+      </div>
+      <div class="loop">
+        <svg class="ring-svg" width="460" height="460" viewBox="0 0 460 460" fill="none" aria-hidden="true">
+          <circle cx="230" cy="230" r="170" stroke="#cfe7f0" stroke-width="2.6"/>
+          <path d="M-9,-7 L9,0 L-9,7 Z" fill="#1391b8" transform="translate(330,92) rotate(36)"/>
+          <path d="M-9,-7 L9,0 L-9,7 Z" fill="#1391b8" transform="translate(392,282) rotate(108)"/>
+          <path d="M-9,-7 L9,0 L-9,7 Z" fill="#1391b8" transform="translate(230,400) rotate(180)"/>
+          <path d="M-9,-7 L9,0 L-9,7 Z" fill="#1391b8" transform="translate(68,282) rotate(252)"/>
+          <path d="M-9,-7 L9,0 L-9,7 Z" fill="#1391b8" transform="translate(130,92) rotate(324)"/>
+        </svg>
+        <div class="loop-core"><div class="lc1">환자 결과</div><div class="lcp">+</div><div class="lc2">사업 성과</div></div>
+        <div class="lnode" style="left:230px;top:60px"><div class="lic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="ln">01</div><div class="lt">등록·동의</div></div>
+        <div class="lnode" style="left:392px;top:178px"><div class="lic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 13h4l2-6 3 12 2-6h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ln">02</div><div class="lt">측정·문진</div></div>
+        <div class="lnode" style="left:330px;top:368px"><div class="lic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 17v4M8 10h5M8 13h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="ln">03</div><div class="lt">규칙·AI 요약</div></div>
+        <div class="lnode" style="left:130px;top:368px"><div class="lic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M6 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17 4l1.4 1.4L21 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ln">04</div><div class="lt">의료진 검토</div></div>
+        <div class="lnode" style="left:68px;top:178px"><div class="lic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v10H8l-4 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="ln">05</div><div class="lt">상담·진료·관리</div></div>
+      </div>
+      <div class="care-side right">
+        <div class="found"><div class="fk">AI 운영</div></div>
+        <div class="found"><div class="fk">KPI·근거</div></div>
+      </div>
+    </div>
+    <div class="care-bottom">
+      <div class="roles"><span><b>DAI</b> 공통 플랫폼</span><span><b>계열사</b> 상품과 고객</span><span><b>파트너</b> 기기와 기술</span><span><b>의료진</b> 임상기준과 최종 판단</span></div>
+      <div class="care-ai">AI는 요약·교육·운영을 지원하고, 의료적 판단은 의료진이 수행합니다.</div>
+    </div>
+  </div>
+  <footer class="slide-footer"><span class="brandmark">정치성 · DAI</span><span class="page-number">05 / 08</span></footer>
+</section></div>
+
+<!-- ============ 06 FIRST BET · Patient journey ============ -->
+<div class="stage"><section class="slide">
+  <header class="slide-header">
+    <div class="eyebrow">첫 검증</div>
+    <h1><span class="em">첫 검증 후보</span><span class="lite">는</span><br>하이카디 기반 심혈관 모니터링·추적관리입니다</h1>
+  </header>
+  <div class="slide-content">
+    <div class="fbet">
+      <div class="journey">
+        <div class="jstep">
+          <div class="jic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M3 13h4l2-7 3 14 2-7h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="jn">01</div><div class="jt">생체신호<br>측정</div>
+        </div>
+        <div class="jarr" aria-hidden="true"></div>
+        <div class="jstep">
+          <div class="jic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 17v4M8 10h6M8 13h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div class="jn">02</div><div class="jt">규칙·AI<br>요약</div>
+        </div>
+        <div class="jarr" aria-hidden="true"></div>
+        <div class="jstep">
+          <div class="jic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M6 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16.5 4l1.4 1.4L20.5 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="jn">03</div><div class="jt">의료진<br>확인</div>
+        </div>
+        <div class="jarr" aria-hidden="true"></div>
+        <div class="jstep">
+          <div class="jic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v10H8l-4 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <div class="jn">04</div><div class="jt">상담·<br>재방문</div>
+        </div>
+        <div class="jarr" aria-hidden="true"></div>
+        <div class="jstep">
+          <div class="jic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M5 19V9M12 19V5M19 19v-7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></div>
+          <div class="jn">05</div><div class="jt">관리 결과<br>축적</div>
+        </div>
+      </div>
+      <div class="gates">
+        <div class="gh">확인해야 할 4가지</div>
+        <div class="gate"><span class="sig" aria-hidden="true"></span><span class="gt">데이터 권리</span></div>
+        <div class="gate"><span class="sig" aria-hidden="true"></span><span class="gt">병원 수요</span></div>
+        <div class="gate"><span class="sig" aria-hidden="true"></span><span class="gt">규제</span></div>
+        <div class="gate"><span class="sig" aria-hidden="true"></span><span class="gt">지불 의사</span></div>
+      </div>
+    </div>
+    <div class="note">공개적으로 확인되는 병원 도입 기반과 연속 측정 데이터를 고려한 후보이며, 내부 조건을 확인한 뒤 확정합니다.</div>
+  </div>
+  <footer class="slide-footer"><span class="brandmark">정치성 · DAI</span><span class="page-number">06 / 08</span></footer>
+</section></div>
+
+<!-- ============ 07 EXECUTION · Roadmap ============ -->
+<div class="stage"><section class="slide">
+  <header class="slide-header">
+    <div class="eyebrow">실행 계획</div>
+    <h1>입사 후 세 단계로<br><span class="lite">불확실성을 줄이고 </span><span class="em">투자 판단</span><span class="lite">을 만들겠습니다</span></h1>
+  </header>
+  <div class="slide-content">
+    <div class="road">
+      <div class="chev s1">
+        <div class="cn">STEP 1</div>
+        <div class="cnm">이해와 선택</div>
+        <div class="cact"><span>사용자·자산·조건 파악</span><span>첫 문제 선택</span></div>
+        <div class="cres">가장 중요한 결과</div>
+        <div class="cresv">우선 사용사례</div>
+      </div>
+      <div class="chev s2">
+        <div class="cn">STEP 2</div>
+        <div class="cnm">설계와 검증</div>
+        <div class="cact"><span>환자 여정·시제품 제작</span><span>연동·규제 검증</span></div>
+        <div class="cres">가장 중요한 결과</div>
+        <div class="cresv">시범 운영 여부</div>
+      </div>
+      <div class="chev s3">
+        <div class="cn">STEP 3</div>
+        <div class="cnm">구축과 확장</div>
+        <div class="cact"><span>실제 운영·KPI 측정</span><span>유료화·재사용 검증</span></div>
+        <div class="cres">최종 의사결정</div>
+        <div class="cresv">확대 · 수정 · 중단</div>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="kic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M6 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div><div class="kk">환자</div><div class="kv">측정 지속·다음 행동</div></div></div>
+      <div class="kpi"><div class="kic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M6 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16.5 4l1.3 1.3L20 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="kk">의료진</div><div class="kv">확인율·업무시간</div></div></div>
+      <div class="kpi"><div class="kic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M9.5 9.5c0-1.2 1.1-2 2.5-2s2.5.8 2.5 2-1.1 2-2.5 2-2.5.8-2.5 2 1.1 2 2.5 2 2.5-.8 2.5-2M12 6v1.5M12 16.5V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div class="kk">사업</div><div class="kv">유료 전환</div></div></div>
+      <div class="kpi"><div class="kic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6" rx="7" ry="2.6" stroke="currentColor" stroke-width="1.6"/><path d="M5 6v12c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V6M5 12c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6" stroke="currentColor" stroke-width="1.6"/></svg></div><div><div class="kk">플랫폼</div><div class="kv">데이터 품질·재사용</div></div></div>
+    </div>
+    <div class="lead" style="text-align:center;margin-top:30px">각 단계에서 <b>경영진이 다음 투자를 판단할 수 있는 근거</b>를 만들겠습니다.</div>
+  </div>
+  <footer class="slide-footer"><span class="brandmark">정치성 · DAI</span><span class="page-number">07 / 08</span></footer>
+</section></div>
+
+<!-- ============ 08 COMMITMENT ============ -->
 <div class="stage"><section class="slide slide-closing">
   <div class="cover-brand"><span class="dot"></span>동아쏘시오그룹 · DAI &nbsp;|&nbsp; AI 헬스케어 플랫폼 팀장</div>
-  <div class="close-main">
-    <div class="eyebrow" style="margin-bottom:40px">맺음말</div>
-    <div class="close-title">기술을 도입하는 팀장이 아니라,<br><span class="em">비즈니스 결과를 끝까지 설명하는 팀장</span>이 되겠습니다</div>
-    <div class="evid">
-      <div class="e"><div class="en">01</div><div class="ek">전환</div><div class="ed">사용자 행동을 성과로 전환</div></div>
-      <div class="e"><div class="en">02</div><div class="ek">구조화</div><div class="ed">현장 업무를 제품과 데이터로 구조화</div></div>
-      <div class="e"><div class="en">03</div><div class="ek">연동</div><div class="ed">기존 시스템과 파트너를 플랫폼으로 연결</div></div>
-      <div class="e"><div class="en">04</div><div class="ek">실행</div><div class="ed">우선순위를 정하고 결과까지 책임</div></div>
+  <div class="commit">
+    <div class="eyebrow" style="margin-bottom:34px">다짐</div>
+    <div class="commit-title">기술을 도입하는 팀장이 아니라,<br><span class="em">검증된 환자 여정과 반복 가능한 사업</span>을 만들겠습니다</div>
+    <div class="promises">
+      <div class="promise"><div class="pn">01</div><div class="pt">한 가지<br>우선과제</div></div>
+      <div class="promise"><div class="pn">02</div><div class="pt">하나의<br>명확한 KPI</div></div>
+      <div class="promise"><div class="pn">03</div><div class="pt">검증 이후<br>확장</div></div>
     </div>
-    <div class="close-line">하나의 우선과제에서 성과를 증명하고, 검증된 기능을 <span class="em">DAI의 플랫폼 자산과 반복 가능한 사업</span>으로 만들겠습니다.</div>
+    <div class="commit-foot">경영진에게는 <b>선택의 근거</b>를, 실행조직에는 <b>명확한 범위</b>를, 사업에는 <b>측정 가능한 결과</b>를 남기겠습니다.</div>
   </div>
   <div class="cover-foot">
     <span>감사합니다. 질문 부탁드립니다. &nbsp;·&nbsp; 정치성</span>
-    <span class="page-number">10 / 10</span>
+    <span class="page-number">08 / 08</span>
   </div>
 </section></div>
 
