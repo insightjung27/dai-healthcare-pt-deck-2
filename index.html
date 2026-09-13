@@ -100,7 +100,7 @@
     border:2.5px solid var(--hair); background:var(--paper); color:var(--slate); flex:0 0 auto; }
   .bnode .bt{ font-size:36px; font-weight:800; color:var(--ink); letter-spacing:-.01em; }
   .bnode .bd{ font-size:26px; font-weight:500; color:var(--muted); line-height:1.35; }
-  .bnode.hub .ring{ width:160px; height:160px; border:none; background:var(--navy); color:var(--sky); box-shadow:0 12px 34px rgba(20,26,51,.24); }
+  .bnode.hub .ring{ width:160px; height:160px; border:none; background:var(--navy); color:var(--sky); }
   .bnode.hub .bt{ font-size:38px; color:var(--accent-deep); }
   .barrow{ flex:1 1 auto; height:5px; background:linear-gradient(90deg,#cbd6df,var(--accent)); position:relative; margin:84px -4px 0; max-width:128px; }
   .barrow::after{ content:""; position:absolute; right:-2px; top:-9px; border-left:20px solid var(--accent);
@@ -165,7 +165,7 @@
   /* center hub */
   .xhub{ position:relative; width:340px; height:392px; display:flex; align-items:center; justify-content:center; }
   .xhub .core{ width:206px; height:206px; border-radius:50%; background:var(--navy); color:#fff;
-    display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 14px 40px rgba(20,26,51,.28); }
+    display:flex; flex-direction:column; align-items:center; justify-content:center; }
   .xhub .core .ct{ font-size:42px; font-weight:800; color:var(--sky); letter-spacing:.02em; }
   .xhub .core .cs{ font-size:23px; font-weight:500; color:#c7d0e6; margin-top:5px; }
   .xhub .kw{ position:absolute; font-size:24px; font-weight:800; color:var(--ink2);
@@ -197,14 +197,14 @@
   .loop .ring-svg{ position:absolute; inset:0; z-index:1; }
   .loop-core{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
     width:152px; height:152px; border-radius:50%; background:var(--navy); color:#fff; z-index:3;
-    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:0 14px 40px rgba(20,26,51,.28); }
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
   .loop-core .lc1{ font-size:29px; font-weight:800; color:var(--sky); letter-spacing:-.01em; }
   .loop-core .lcp{ font-size:22px; font-weight:800; color:#8b96b8; margin:2px 0; }
   .loop-core .lc2{ font-size:29px; font-weight:800; color:#fff; letter-spacing:-.01em; }
   /* 아이콘 원 — 기하학적 중심이 순환선 위에 정확히 (translate -50%,-50%는 원에만 적용) */
   .lic{ position:absolute; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%;
     background:var(--paper); border:2px solid var(--accent); color:var(--accent-deep); z-index:4;
-    display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(19,145,184,.16); }
+    display:flex; align-items:center; justify-content:center; }
   /* 번호+라벨 — 아이콘 원과 분리된 별도 레이어(라벨 줄 수가 원 위치를 바꾸지 않음) */
   .llabel{ position:absolute; transform:translateX(-50%); width:max-content; text-align:center; z-index:5; }
   .llabel.up{ transform:translate(-50%,-100%); }
