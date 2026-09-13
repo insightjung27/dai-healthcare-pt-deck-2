@@ -116,34 +116,40 @@
   .vdiv{ width:1px; align-self:stretch; background:var(--hair); }
   .metric{ display:flex; flex-direction:column; align-items:flex-start; }
   .metric .mco{ font-size:24px; font-weight:800; letter-spacing:.14em; color:var(--slate); text-transform:uppercase; }
-  .metric .mnum{ font-size:142px; font-weight:800; line-height:.86; letter-spacing:-.035em; color:var(--accent-deep);
-    font-feature-settings:"tnum" 1; margin-top:10px; }
+  .metric .mnum{ font-size:132px; font-weight:800; line-height:.86; letter-spacing:-.035em; color:var(--accent-deep);
+    font-feature-settings:"tnum" 1; margin-top:8px; }
   .metric .mnum .sg{ font-size:.5em; vertical-align:.1em; margin-right:.02em; }
   .metric .mnum .u{ font-size:.46em; font-weight:800; }
   .metric .mlabel{ margin-top:8px; font-size:30px; font-weight:800; color:var(--ink); }
-  .metric .mviz{ margin-top:28px; width:100%; min-height:176px; }
-  .metric .mline{ margin-top:22px; font-size:26px; font-weight:500; color:var(--ink2); line-height:1.4; min-height:74px; }
+  .metric .mviz{ margin-top:24px; width:100%; min-height:132px; }
+  .metric .mline{ margin-top:18px; font-size:26px; font-weight:500; color:var(--ink2); line-height:1.4; min-height:58px; }
   .metric .msub{ margin-top:8px; font-size:21px; font-weight:500; color:var(--muted); }
   /* funnel before/after — 동일 크기(프로세스 변경 표현, 정량 왜곡 방지) */
   .fun{ display:flex; align-items:flex-start; gap:26px; }
   .fun .fb{ flex:1; display:flex; flex-direction:column; align-items:center; gap:14px; }
-  .fun .bar{ width:100%; height:100px; border-radius:9px; }
+  .fun .bar{ width:100%; height:74px; border-radius:9px; }
   .fun .fb.b1 .bar{ background:var(--gray); }
   .fun .fb.b2 .bar{ background:linear-gradient(180deg,var(--accent),var(--accent-deep)); }
   .fun .fl{ font-size:23px; font-weight:500; color:var(--muted); text-align:center; line-height:1.3; }
-  .fun .fup{ align-self:flex-start; margin-top:34px; color:var(--accent); font-size:36px; font-weight:800; }
+  .fun .fup{ align-self:flex-start; margin-top:20px; color:var(--accent); font-size:36px; font-weight:800; }
   /* time bars — 라벨 뒤 공통 트랙에서 % → 정확히 3:1 */
   .tbars{ display:flex; flex-direction:column; gap:22px; margin-top:6px; }
   .tbar{ display:flex; align-items:center; gap:18px; }
   .tbar .tl{ width:94px; font-size:24px; font-weight:800; color:var(--ink); flex:0 0 auto; }
   .ttrack{ flex:1 1 auto; }
-  .ttrack .fill{ height:48px; border-radius:8px; display:flex; align-items:center; justify-content:flex-end;
+  .ttrack .fill{ height:44px; border-radius:8px; display:flex; align-items:center; justify-content:flex-end;
     padding-right:16px; color:#fff; font-size:23px; font-weight:800; }
   .ttrack .fill.b1{ width:100%; background:var(--gray); }
   .ttrack .fill.b2{ width:33.33%; background:linear-gradient(90deg,var(--accent),var(--accent-deep)); }
-  .evi-row{ flex:0 0 auto; display:flex; justify-content:center; gap:80px; margin-top:24px; }
-  .evi{ display:flex; align-items:center; gap:13px; font-size:24px; font-weight:500; color:var(--ink2); }
-  .evi .d{ width:9px; height:9px; border-radius:50%; background:var(--accent); flex:0 0 auto; }
+  /* S3 하단 — 다른 회사 실행 경험(정량 성과와 위계 분리) */
+  .otherexp{ flex:0 0 auto; margin-top:20px; padding-top:20px; border-top:1.5px solid var(--hair); background:#f7f9fc;
+    border-radius:12px; padding:18px 30px 20px; }
+  .oe-title{ font-size:21px; font-weight:600; letter-spacing:.01em; color:var(--slate); margin-bottom:14px; }
+  .oe-cols{ display:grid; grid-template-columns:1fr 1px 1fr; gap:0 44px; align-items:start; }
+  .oe-cols .oe-sep{ width:1px; align-self:stretch; background:var(--hair); }
+  .oe-h{ font-size:26px; font-weight:800; color:var(--ink); letter-spacing:-.01em; }
+  .oe-h span{ font-size:23px; font-weight:700; color:var(--accent-deep); letter-spacing:0; }
+  .oe-d{ margin-top:8px; font-size:23px; font-weight:500; color:var(--ink2); line-height:1.4; }
 
   /* ===== S4 Transformation flow ===== */
   .xform{ display:flex; align-items:flex-start; justify-content:center; gap:0; flex:1 1 auto; padding-top:6px; }
@@ -174,7 +180,7 @@
     border-top:12px solid transparent; border-bottom:12px solid transparent; }
 
   /* ===== S5 Care Loop ===== */
-  .s-care h1{ font-size:52px; margin-top:16px; }
+  .s-care h1{ font-size:52px; margin-top:10px; }
   .s5name{ font-size:42px; }
   .care{ display:flex; align-items:center; justify-content:center; gap:50px; flex:1 1 auto; }
   .care-side{ display:flex; flex-direction:column; gap:60px; width:238px; }
@@ -186,26 +192,30 @@
   .care-side.left .found::after{ content:""; position:absolute; right:0; top:50%; width:20px; height:2px; background:var(--slate2); }
   .care-side.right .found{ padding-left:28px; }
   .care-side.right .found::after{ content:""; position:absolute; left:0; top:50%; width:20px; height:2px; background:var(--slate2); }
-  .loop{ position:relative; width:500px; height:500px; flex:0 0 auto; }
-  .loop .ring-svg{ position:absolute; inset:0; }
-  .lnode{ position:absolute; transform:translate(-50%,-50%); width:154px; display:flex; flex-direction:column;
-    align-items:center; gap:8px; text-align:center; }
-  .lnode .lic{ width:66px; height:66px; border-radius:50%; background:var(--paper); border:2px solid var(--accent);
-    color:var(--accent-deep); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(19,145,184,.16); }
-  .lnode .lt{ font-size:26px; font-weight:800; color:var(--ink); line-height:1.22; }
-  .lnode .ln{ font-size:16px; font-weight:800; color:var(--accent); letter-spacing:.08em; }
+  /* 하나의 좌표계(520 square). 작은 원=원주 정확 고정, 라벨=별도 레이어 */
+  .loop{ position:relative; width:496px; height:496px; flex:0 0 auto; }
+  .loop .ring-svg{ position:absolute; inset:0; z-index:1; }
   .loop-core{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-    width:212px; height:212px; border-radius:50%; background:var(--navy); color:#fff;
+    width:152px; height:152px; border-radius:50%; background:var(--navy); color:#fff; z-index:3;
     display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:0 14px 40px rgba(20,26,51,.28); }
-  .loop-core .lc1{ font-size:32px; font-weight:800; color:var(--sky); letter-spacing:-.01em; }
-  .loop-core .lcp{ font-size:23px; font-weight:800; color:#8b96b8; margin:4px 0; }
-  .loop-core .lc2{ font-size:32px; font-weight:800; color:#fff; letter-spacing:-.01em; }
-  .care-bottom{ flex:0 0 auto; margin-top:8px; }
+  .loop-core .lc1{ font-size:29px; font-weight:800; color:var(--sky); letter-spacing:-.01em; }
+  .loop-core .lcp{ font-size:22px; font-weight:800; color:#8b96b8; margin:2px 0; }
+  .loop-core .lc2{ font-size:29px; font-weight:800; color:#fff; letter-spacing:-.01em; }
+  /* 아이콘 원 — 기하학적 중심이 순환선 위에 정확히 (translate -50%,-50%는 원에만 적용) */
+  .lic{ position:absolute; transform:translate(-50%,-50%); width:64px; height:64px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--accent); color:var(--accent-deep); z-index:4;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(19,145,184,.16); }
+  /* 번호+라벨 — 아이콘 원과 분리된 별도 레이어(라벨 줄 수가 원 위치를 바꾸지 않음) */
+  .llabel{ position:absolute; transform:translateX(-50%); width:max-content; text-align:center; z-index:5; }
+  .llabel.up{ transform:translate(-50%,-100%); }
+  .llabel .ln{ font-size:16px; font-weight:800; color:var(--accent); letter-spacing:.08em; }
+  .llabel .lt{ margin-top:2px; font-size:26px; font-weight:800; color:var(--ink); line-height:1.22; }
+  .care-bottom{ flex:0 0 auto; margin-top:4px; }
   .roles{ display:grid; grid-template-columns:repeat(4,1fr); gap:0 28px; max-width:1220px; margin:0 auto; }
   .role{ text-align:center; }
   .role b{ display:block; font-size:24px; font-weight:800; color:var(--ink); }
   .role span{ display:block; font-size:22px; font-weight:500; color:var(--muted); margin-top:4px; }
-  .care-ai{ margin-top:20px; text-align:center; font-size:22px; font-weight:500; color:var(--muted); }
+  .care-ai{ margin-top:12px; text-align:center; font-size:22px; font-weight:500; color:var(--muted); }
 
   /* ===== S6 Patient journey + gates ===== */
   .fbet{ display:grid; grid-template-columns:3fr 1fr; gap:48px; align-items:center; flex:1 1 auto; }
@@ -335,7 +345,7 @@
       </div>
       <div class="caps">
         <div class="cap"><div class="cv">전환</div><div class="cc">굿리치</div></div>
-        <div class="cap"><div class="cv">운영</div><div class="cc">THK</div></div>
+        <div class="cap"><div class="cv">운영</div><div class="cc">THK컴퍼니</div></div>
         <div class="cap"><div class="cv">연동</div><div class="cc">병원 원무</div></div>
         <div class="cap"><div class="cv">조직 실행</div><div class="cc">코나아이</div></div>
       </div>
@@ -369,7 +379,7 @@
       </div>
       <div class="vdiv" aria-hidden="true"></div>
       <div class="metric">
-        <div class="mco">THK</div>
+        <div class="mco">THK컴퍼니</div>
         <div class="mnum"><span class="sg">−</span>67<span class="u">%</span></div>
         <div class="mlabel">직배송 처리시간</div>
         <div class="mviz">
@@ -381,9 +391,19 @@
         <div class="mline">수기 확인과 예외처리를 시스템 흐름으로 구조화했습니다.</div>
       </div>
     </div>
-    <div class="evi-row">
-      <div class="evi"><span class="d"></span>EMR API로 예약부터 수납까지 연결</div>
-      <div class="evi"><span class="d"></span>3개 팀의 우선순위와 경영진 의사결정 지원</div>
+    <div class="otherexp">
+      <div class="oe-title">다른 회사에서의 실행 경험</div>
+      <div class="oe-cols">
+        <div class="oe">
+          <div class="oe-h">더베스트페이 · <span>병원 시스템 연동</span></div>
+          <div class="oe-d">기존 EMR API로 예약·조회·수납 연결</div>
+        </div>
+        <div class="oe-sep" aria-hidden="true"></div>
+        <div class="oe">
+          <div class="oe-h">코나아이 · <span>다중 팀 실행 관리</span></div>
+          <div class="oe-d">3개 팀 우선순위 조율 및 경영진 의사결정 지원</div>
+        </div>
+      </div>
     </div>
   </div>
   <footer class="slide-footer"><span class="brandmark">정치성 · DAI</span><span class="page-number">03 / 08</span></footer>
@@ -435,10 +455,7 @@
     <div class="lead" style="text-align:center;margin-top:34px">그룹의 접점을 연결하고, <b>검증된 기능을 반복 가능한 플랫폼 자산</b>으로 만들겠습니다.</div>
     <div class="note" style="text-align:center">공개자료 기반 가설이며, 데이터·API·계약 조건은 입사 후 확인합니다.</div>
   </div>
-  <footer class="slide-footer">
-    <span class="src">출처 · DAI 사명 변경 및 AX 전환 발표 / 동아쏘시오그룹 AI직군 채용공고 / 동아ST 디지털 헬스케어 공개자료</span>
-    <span class="page-number">04 / 08</span>
-  </footer>
+  <footer class="slide-footer"><span class="brandmark">정치성 · DAI</span><span class="page-number">04 / 08</span></footer>
 </section></div>
 
 <!-- ============ 05 PROPOSAL · Care Loop ============ -->
@@ -454,20 +471,25 @@
         <div class="found"><div class="fk">데이터·API</div></div>
       </div>
       <div class="loop">
-        <svg class="ring-svg" width="500" height="500" viewBox="0 0 500 500" fill="none" aria-hidden="true">
-          <circle cx="250" cy="250" r="185" stroke="#cfe7f0" stroke-width="2.8"/>
-          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(359,100) rotate(36)"/>
-          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(426,307) rotate(108)"/>
-          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(250,435) rotate(180)"/>
-          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(74,307) rotate(252)"/>
-          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(141,100) rotate(324)"/>
+        <svg class="ring-svg" width="496" height="496" viewBox="0 0 496 496" fill="none" aria-hidden="true">
+          <circle cx="248" cy="248" r="188" stroke="#cfe7f0" stroke-width="2.8"/>
+          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(358.50 95.90) rotate(36)"/>
+          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(426.80 306.10) rotate(108)"/>
+          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(248 436) rotate(180)"/>
+          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(69.20 306.10) rotate(252)"/>
+          <path d="M-11,-8 L11,0 L-11,8 Z" fill="#1391b8" transform="translate(137.50 95.90) rotate(324)"/>
         </svg>
         <div class="loop-core"><div class="lc1">환자 결과</div><div class="lcp">+</div><div class="lc2">사업 성과</div></div>
-        <div class="lnode" style="left:250px;top:65px"><div class="lic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="ln">01</div><div class="lt">등록·동의</div></div>
-        <div class="lnode" style="left:426px;top:193px"><div class="lic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 13h4l2-6 3 12 2-6h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ln">02</div><div class="lt">측정·문진</div></div>
-        <div class="lnode" style="left:359px;top:400px"><div class="lic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 17v4M8 10h5M8 13h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="ln">03</div><div class="lt">규칙·AI 요약</div></div>
-        <div class="lnode" style="left:141px;top:400px"><div class="lic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M6 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17 4l1.4 1.4L21 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="ln">04</div><div class="lt">의료진 검토</div></div>
-        <div class="lnode" style="left:74px;top:193px"><div class="lic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v10H8l-4 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="ln">05</div><div class="lt">상담·진료·관리</div></div>
+        <div class="lic" aria-hidden="true" style="left:248px;top:60px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <div class="lic" aria-hidden="true" style="left:426.80px;top:189.90px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 13h4l2-6 3 12 2-6h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lic" aria-hidden="true" style="left:358.50px;top:400.10px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 17v4M8 10h5M8 13h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <div class="lic" aria-hidden="true" style="left:137.50px;top:400.10px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M6 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M17 4l1.4 1.4L21 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="lic" aria-hidden="true" style="left:69.20px;top:189.90px"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v10H8l-4 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <div class="llabel" style="left:248px;top:102px"><div class="ln">01</div><div class="lt">등록·동의</div></div>
+        <div class="llabel up" style="left:426.80px;top:148px"><div class="ln">02</div><div class="lt">측정·문진</div></div>
+        <div class="llabel" style="left:358.50px;top:442px"><div class="ln">03</div><div class="lt">규칙·AI 요약</div></div>
+        <div class="llabel" style="left:137.50px;top:442px"><div class="ln">04</div><div class="lt">의료진 검토</div></div>
+        <div class="llabel up" style="left:69.20px;top:148px"><div class="ln">05</div><div class="lt">상담·진료<br>관리</div></div>
       </div>
       <div class="care-side right">
         <div class="found"><div class="fk">AI 운영</div></div>
