@@ -125,13 +125,12 @@
   .metric .mline{ margin-top:18px; font-size:26px; font-weight:500; color:var(--ink2); line-height:1.4; min-height:58px; }
   .metric .msub{ margin-top:8px; font-size:21px; font-weight:500; color:var(--muted); }
   /* funnel before/after — 동일 크기(프로세스 변경 표현, 정량 왜곡 방지) */
-  .fun{ display:flex; align-items:flex-start; gap:26px; }
-  .fun .fb{ flex:1; display:flex; flex-direction:column; align-items:center; gap:14px; }
-  .fun .bar{ width:100%; height:74px; border-radius:9px; }
-  .fun .fb.b1 .bar{ background:var(--gray); }
-  .fun .fb.b2 .bar{ background:linear-gradient(180deg,var(--accent),var(--accent-deep)); }
-  .fun .fl{ font-size:23px; font-weight:500; color:var(--muted); text-align:center; line-height:1.3; }
-  .fun .fup{ align-self:flex-start; margin-top:20px; color:var(--accent); font-size:36px; font-weight:800; }
+  .fun{ display:flex; align-items:center; gap:22px; }
+  .fbox{ flex:1; min-height:106px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:16px 18px; font-size:21px; font-weight:700; line-height:1.32; letter-spacing:-.01em; }
+  .fbox.b1{ background:var(--gray); color:var(--ink); }
+  .fbox.b2{ background:linear-gradient(135deg,var(--accent),var(--accent-deep)); color:#fff; }
+  .fun .fup{ flex:0 0 auto; color:var(--accent); font-size:34px; font-weight:800; }
   /* time bars — 라벨 뒤 공통 트랙에서 % → 정확히 3:1 */
   .tbars{ display:flex; flex-direction:column; gap:22px; margin-top:6px; }
   .tbar{ display:flex; align-items:center; gap:18px; }
@@ -369,9 +368,9 @@
         <div class="mlabel">상담신청 전환율</div>
         <div class="mviz">
           <div class="fun" aria-hidden="true">
-            <div class="fb b1"><div class="bar"></div><div class="fl">상세결과<br>우선 공개</div></div>
+            <div class="fbox b1">상세결과<br>우선 공개</div>
             <div class="fup">→</div>
-            <div class="fb b2"><div class="bar"></div><div class="fl">상담신청 후<br>상세 리포트</div></div>
+            <div class="fbox b2">상담신청 후<br>상세 리포트</div>
           </div>
         </div>
         <div class="mline">정보 제공 순서를 바꿔 상담 행동을 높였습니다.</div>
